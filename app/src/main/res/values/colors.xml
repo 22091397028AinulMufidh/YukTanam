@@ -6,6 +6,7 @@
     <color name="gray">#A3A3A3</color>
     <color name="black">#2C2C2C</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_icon">#F4F4F4</color>
     
 <!-- YukTanam Color Scheme   -->
     <color name="light">#F2F8EB</color>

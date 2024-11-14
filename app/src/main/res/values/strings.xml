@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">YukTanam</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+
+    <!-- Bottom Navigation   -->
+    <string name="title_home">Beranda</string>
+    <string name="title_challenge">Tantangan</string>
+    <string name="title_scan">Deteksi</string>
+    <string name="title_favorite">Favorit</string>
+    <string name="title_profile">Profil</string>
+
 </resources>

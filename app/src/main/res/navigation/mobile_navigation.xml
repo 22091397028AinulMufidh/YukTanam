@@ -12,14 +12,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.yuktanam.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_challenge"
+        android:name="com.example.yuktanam.ui.challenge.ChallengeFragment"
+        android:label="@string/title_challenge"
+        tools:layout="@layout/fragment_challenge" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.yuktanam.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_scan"
+        android:name="com.example.yuktanam.ui.scan.ScanFragment"
+        android:label="@string/title_scan"
+        tools:layout="@layout/fragment_scan" />
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.example.yuktanam.ui.scan.ScanFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_favorite" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.yuktanam.ui.scan.ScanFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

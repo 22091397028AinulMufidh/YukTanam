@@ -22,14 +22,14 @@ class ChallengeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
+        val challengeViewModel =
             ViewModelProvider(this).get(ChallengeViewModel::class.java)
 
         _binding = FragmentChallengeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textChallenge
+        challengeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

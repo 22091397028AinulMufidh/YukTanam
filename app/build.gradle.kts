@@ -53,5 +53,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.google.material.v190)
+    implementation(libs.glide)
+    implementation(libs.circleimageview)
+    implementation(libs.androidx.core.splashscreen)
 
 }

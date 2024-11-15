@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.yuktanam.databinding.FragmentProfileBinding
-import com.example.yuktanam.ui.favorite.FavoriteViewModel
 
 class ProfileFragment : Fragment() {
 
@@ -23,15 +22,15 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val profileViewModel =
-            ViewModelProvider(this).get(FavoriteViewModel::class.java)
+            ViewModelProvider(this).get(ProfileViewModel::class.java)
 
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-//        val textView: TextView = binding.textFavorite
-//        favoriteViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
+
+        profileViewModel.text.observe(viewLifecycleOwner) {
+
+        }
         return root
     }
 
@@ -39,4 +38,6 @@ class ProfileFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }

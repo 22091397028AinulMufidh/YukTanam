@@ -15,4 +15,9 @@
 
         <item name="android:fontFamily">@font/montserrat</item>
     </style>
+
+    <style name="CustomSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="queryHint">Cari tanaman...</item>
+        <item name="android:textColorHint">@color/gray</item>
+    </style>
 </resources>

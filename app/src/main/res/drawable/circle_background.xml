@@ -1,0 +1,5 @@
+<!-- res/drawable/circle_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/light_hover" /> <!-- Warna background -->
+    <corners android:radius="100dp" /> <!-- Membuat bentuk lingkaran -->
+</shape>

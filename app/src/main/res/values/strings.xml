@@ -8,4 +8,19 @@
     <string name="title_favorite">Favorit</string>
     <string name="title_profile">Profil</string>
 
+    <!-- Profile   -->
+    <string name="name_profile">Ederson</string>
+    <string name="addres">Surabaya, Jawa Timur</string>
+    
+    <!-- Menu Setting Profile   -->
+    <string name="title_address">Alamat</string>
+    <string name="title_language">Bahasa</string>
+    <string name="title_dark_mode">Mode Gelap</string>
+    <string name="title_schedule">Jadwal</string>
+    <string name="title_help">Bantuan</string>
+    <string name="title_privacy">Kebijakan Privasi</string>
+    <string name="title_terms">Kebijakan Penggunaan</string>
+
+    <!--  Home  -->
+
 </resources>

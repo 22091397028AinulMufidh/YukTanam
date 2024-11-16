@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/card_rounded"
+    android:padding="16dp">
+
+    <!-- Plant name -->
+    <TextView
+        android:id="@+id/plantName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Leon"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+    <!-- Plant type -->
+    <TextView
+        android:id="@+id/plantType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/plantName"
+        android:text="Monstera"
+        android:textSize="14sp"
+        android:textColor="#7A7A7A" />
+
+    <!-- Plant image -->
+    <ImageView
+        android:id="@+id/plantImage"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_toEndOf="@id/plantType"
+        android:layout_marginStart="45dp"
+        android:src="@drawable/sample_plant"
+        android:scaleType="centerCrop" />
+
+    <!-- Heart icon for favoriting -->
+    <ImageView
+        android:id="@+id/heartIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_favorite_filled" />
+
+    <!-- Detail button -->
+    <Button
+        android:id="@+id/buttonDetail"
+        android:layout_width="75dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/plantType"
+        android:layout_alignStart="@id/plantType"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_rounded"
+        android:text="Detail"
+        android:textSize="10sp"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>

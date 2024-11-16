@@ -1,9 +1,13 @@
 [versions]
 agp = "8.6.1"
+<<<<<<< HEAD
+googleMaterial = "1.12.0"
+=======
 circleimageview = "3.1.0"
 coreSplashscreen = "1.0.0"
 glide = "4.16.0"
 googleMaterial = "1.9.0"
+>>>>>>> e3497020ffa574838e9d2c9c934ff4db4e3e9c94
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -14,9 +18,14 @@ material = "1.12.0"
 constraintlayout = "2.2.0"
 lifecycleLivedataKtx = "2.8.7"
 lifecycleViewmodelKtx = "2.8.7"
+<<<<<<< HEAD
+navigationFragmentKtx = "2.8.4"
+navigationUiKtx = "2.8.4"
+=======
 navigationFragmentKtx = "2.8.3"
 navigationUiKtx = "2.8.3"
 activity = "1.9.3"
+>>>>>>> e3497020ffa574838e9d2c9c934ff4db4e3e9c94
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

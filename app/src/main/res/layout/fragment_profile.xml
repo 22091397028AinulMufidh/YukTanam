@@ -9,6 +9,11 @@
 
     <!-- Judul Profil di Tengah -->
     <TextView
+<<<<<<< HEAD
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/title_favorite" />
+=======
         android:id="@+id/title_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,6 +25,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+>>>>>>> e3497020ffa574838e9d2c9c934ff4db4e3e9c94
 
     <!-- Gambar Profil -->
     <de.hdodenhof.circleimageview.CircleImageView

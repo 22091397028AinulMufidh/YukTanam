@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.yuktanam.databinding.FragmentChallengeBinding
 
 class ChallengeFragment : Fragment() {
@@ -28,10 +29,12 @@ class ChallengeFragment : Fragment() {
         _binding = FragmentChallengeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textChallenge
-        challengeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        challengeViewModel.challenges.observe(viewLifecycleOwner) { challenges ->
+            val adapter = ChallengeAdapter(challenges)
+            binding.rvChallenges.adapter = adapter
+            binding.rvChallenges.layoutManager = LinearLayoutManager(context)
         }
+
         return root
     }
 

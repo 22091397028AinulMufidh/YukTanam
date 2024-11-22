@@ -13,7 +13,9 @@ class FavoriteViewModel : ViewModel() {
     private val _favoriteItems = MutableLiveData<List<FavoriteItem>>().apply {
         value = listOf(
             FavoriteItem("Leon", "Monstera", R.drawable.sample_plant),
-            FavoriteItem("Deona", "Anthurium", R.drawable.sample_plant)
+            FavoriteItem("Deona", "Anthurium", R.drawable.sample_plant),
+            FavoriteItem("Deona", "Anthurium", R.drawable.sample_plant),
+            FavoriteItem("Deona", "Anthurium", R.drawable.sample_plant),
         )
     }
     val favoriteItems: LiveData<List<FavoriteItem>> = _favoriteItems

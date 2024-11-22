@@ -26,16 +26,6 @@
         android:textSize="14sp"
         android:textColor="#7A7A7A" />
 
-    <!-- Plant image -->
-    <ImageView
-        android:id="@+id/plantImage"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_toEndOf="@id/plantType"
-        android:layout_marginStart="45dp"
-        android:src="@drawable/sample_plant"
-        android:scaleType="centerCrop" />
-
     <!-- Heart icon for favoriting -->
     <ImageView
         android:id="@+id/heartIcon"
@@ -44,8 +34,20 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="8dp"
         android:src="@drawable/ic_favorite_filled" />
+    <!-- Plant image -->
+
 
     <!-- Detail button -->
+
+    <ImageView
+        android:id="@+id/plantImage"
+        android:layout_width="170dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="67dp"
+        android:layout_toEndOf="@id/plantType"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sample_plant" />
+
     <Button
         android:id="@+id/buttonDetail"
         android:layout_width="75dp"

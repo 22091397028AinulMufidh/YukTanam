@@ -68,7 +68,7 @@ class HomeFragment : Fragment() {
         viewpager2.adapter = imageAdapter
         imageAdapter.submitList(imageList)
 
-        val slideDotLL = binding.slideDotLL
+        val slideDotLL = binding.slideDot
         val dotsImage = Array(imageList.size) { ImageView(requireContext()) }
 
         dotsImage.forEach {

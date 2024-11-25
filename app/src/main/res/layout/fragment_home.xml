@@ -34,6 +34,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
+    <!--  CONTENT IMAGE SLIDER  -->
     <LinearLayout
         android:id="@+id/slider"
         android:layout_width="match_parent"
@@ -58,7 +59,7 @@
         app:layout_constraintVertical_bias="0.016" />
 
     <LinearLayout
-        android:id="@+id/slideDotLL"
+        android:id="@+id/slideDot"
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:gravity="center"
@@ -70,5 +71,157 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="287dp"
         tools:ignore="MissingConstraints" />
+
+    <!--  TEXT CATEGORY  -->
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/category"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat_semibold"
+        app:layout_constraintTop_toBottomOf="@id/view_pager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/see_all"
+        tools:ignore="MissingConstraints" />
+
+    <!--  TEXT SEE ALL  -->
+    <TextView
+        android:id="@+id/see_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/see_all"
+        android:textColor="@color/green_dark"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/view_pager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/category"
+        tools:ignore="MissingConstraints" />
+
+    <!--  SCROLL VIEW CATEGORY  -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/category"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- RelativeLayout for each item -->
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/card_category">
+
+                <!-- Plant name -->
+                <TextView
+                    android:id="@+id/tropis_plant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/tropis"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/black"
+                    tools:ignore="RelativeOverlap" />
+
+                <!-- Plant image -->
+                <ImageView
+                    android:id="@+id/tropisImage"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/tropical"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/card_category">
+
+                <!-- Plant name -->
+                <TextView
+                    android:id="@+id/sukulen_plant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/sukulen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/black"
+                    tools:ignore="RelativeOverlap" />
+
+                <!-- Plant image -->
+                <ImageView
+                    android:id="@+id/sukulenImage"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/sukulen"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/card_category">
+
+                <!-- Plant name -->
+                <TextView
+                    android:id="@+id/tropis_plant3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/tropis"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/black"
+                    tools:ignore="RelativeOverlap" />
+
+                <!-- Plant image -->
+                <ImageView
+                    android:id="@+id/plantImage3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/tropical"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

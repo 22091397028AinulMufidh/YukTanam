@@ -23,5 +23,10 @@
     <string name="title_terms">Kebijakan Penggunaan</string>
 
     <!--  Home  -->
+    <string name="category">Kategori</string>
+    <string name="see_all">Lihat semua</string>
+    <string name="tropis">Tropis</string>
+    <string name="sukulen">Sukulen</string>
+    <string name="hias">Hias</string>
 
 </resources>

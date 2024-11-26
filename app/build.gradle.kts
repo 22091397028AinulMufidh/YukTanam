@@ -57,4 +57,7 @@ dependencies {
     implementation(libs.circleimageview)
     implementation(libs.androidx.core.splashscreen)
 
+    // RecyclerView
+    implementation(libs.androidx.recyclerview)
+
 }

@@ -28,5 +28,10 @@
     <string name="tropis">Tropis</string>
     <string name="sukulen">Sukulen</string>
     <string name="hias">Hias</string>
+    <string name="myplant">Tanaman Ku</string>
+
+    <!--  MY PLants  -->
+    <string name="leon">Leon</string>
+    <string name="monstera">Monstera</string>
 
 </resources>

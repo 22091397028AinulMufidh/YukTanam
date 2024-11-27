@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.yuktanam.R
 import com.example.yuktanam.databinding.FragmentHomeBinding
-import com.example.yuktanam.logic.home.addplant.Plant
-import com.example.yuktanam.logic.home.addplant.PlantsAdapter
+import com.example.yuktanam.logic.home.recyclerview.Plant
+import com.example.yuktanam.logic.home.recyclerview.PlantAdapter
 import com.example.yuktanam.logic.slider.ImageAdapter
 import com.example.yuktanam.logic.slider.ImageItem
 import java.util.UUID
@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
     private lateinit var viewpager2: ViewPager2
     private lateinit var pageChangeListener: ViewPager2.OnPageChangeCallback
 
-    private lateinit var adapter: PlantsAdapter
+    private lateinit var adapter: PlantAdapter
 
     private val params = LinearLayout.LayoutParams(
         LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -125,15 +125,16 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerView() {
         // Contoh data tanaman
-        val plants = listOf(
-            Plant("Aloe Vera", R.drawable.tropis),
-            Plant("Cactus", R.drawable.sukulen),
-            Plant("Bamboo", R.drawable.tropical)
+        val plantList = listOf(
+            Plant("Leon", "Monstera", R.drawable.sukulen, false),
+            Plant("Aloe Vera", "Africa", R.drawable.tropical, false),
+            Plant("Leon", "Monstera", R.drawable.sukulen, false),
         )
 
         // Inisialisasi RecyclerView
-        adapter = PlantsAdapter(plants)
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+        adapter = PlantAdapter(plantList)
+        binding.recyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerView.adapter = adapter
     }
 

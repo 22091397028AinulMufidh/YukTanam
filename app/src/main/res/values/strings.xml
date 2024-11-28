@@ -19,6 +19,12 @@
     <string name="error_email_is_not_valid">Alamat Email tidak valid</string>
     <string name="error_password_too_short">Kata sandi setidaknya harus 8 karakter</string>
 
+    <!-- Register -->
+    <string name="person">Nama</string>
+    <string name="title_register">Isikan data terlebih dahulu dan pastikan sudah benar dan valid</string>
+    <string name="name_hint">Masukan nama kamu</string>
+    <string name="have_account">Sudah memiliki akun?</string>
+
     <!-- Bottom Navigation   -->
     <string name="title_home">Beranda</string>
     <string name="title_challenge">Tantangan</string>
@@ -50,5 +56,23 @@
     <!--  MY PLants  -->
     <string name="leon">Leon</string>
     <string name="monstera">Monstera</string>
+
+    <!--    Challenge Item-->
+    <string name="judul_misi">Judul Misi</string>
+    <string name="deskripsi_misi">Deskripsi Misi</string>
+    <string name="koin">25</string>
+    <string name="coin_icon">Icon Coin</string>
+    <string name="img_total_coin">250</string>
+    <string name="total_koin">Total Koin</string>
+
+<!--    Fragment Challenge-->
+    <string name="mission_icon">Mission Icon</string>
+    <string name="total_mission_success">3</string>
+    <string name="misi_selesai">Misi Selesai</string>
+    <string name="exchange_icon">Exchange Icon</string>
+    <string name="Reward">Tukarkan koin dengan hadiah menarik</string>
+    <string name="exchange">Tukarkan</string>
+    <string name="all_mission">Semua Misi</string>
+
 
 </resources>

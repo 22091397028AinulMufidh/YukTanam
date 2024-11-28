@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@color/background_color"
+    tools:context=".ui.register.RegisterActivity">
+
+    <!-- IMAGE LOGO  -->
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <!-- TEXT TITLE REGISTER  -->
+    <TextView
+        android:id="@+id/title_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="14sp"
+        android:textColor="@color/gray_700"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/img_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/title_register" />
+
+    <!-- FORM NAME -->
+    <LinearLayout
+        android:id="@+id/form_name"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/card_login"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/title_register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- EditText Email -->
+        <com.example.yuktanam.ui.customview.CustomName
+            android:id="@+id/nameEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="@string/name_hint"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:inputType="textEmailAddress"
+            tools:ignore="SmallSp,TextFields" />
+    </LinearLayout>
+
+    <!-- FORM EMAIL -->
+    <LinearLayout
+        android:id="@+id/form_email"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/card_login"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/form_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <!-- EditText Email -->
+        <com.example.yuktanam.ui.customview.CustomEmail
+            android:id="@+id/emailEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="@string/email_hint"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:inputType="textEmailAddress" />
+    </LinearLayout>
+
+    <!-- FORM PASSWORD -->
+    <LinearLayout
+        android:id="@+id/form_password"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/card_login"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/form_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <!-- EditText Password -->
+        <com.example.yuktanam.ui.customview.CustomPassword
+            android:id="@+id/passwordEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="@string/password_hint"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <!-- Button Login -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="30dp"
+        android:paddingVertical="8dp"
+        android:text="@string/register"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/green_normal_hover"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/form_password" />
+
+    <!--  CONTAINER HAVE ACCOUNT  -->
+    <LinearLayout
+        android:id="@+id/text_dont_have_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/btn_register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- TEXT HAVE ACCOUNT -->
+        <TextView
+            android:id="@+id/have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/have_account"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp" />
+
+        <!-- TEXT REGISTER -->
+        <TextView
+            android:id="@+id/text_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/green_dark" />
+    </LinearLayout>
+
+    <!-- CONTAINER TEXT LOGIN LAIN -->
+    <LinearLayout
+        android:id="@+id/container_any_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/text_dont_have_account">
+
+        <!-- LINE LEFT -->
+        <View
+            android:layout_width="125dp"
+            android:layout_height="1dp"
+            android:background="@color/gray_200"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- TEXT MASUK DENGAN -->
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="@string/any_login"
+            android:textSize="10sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/gray_700"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textAlignment="center"/>
+
+        <!-- LINE RIGHT -->
+        <View
+            android:layout_width="125dp"
+            android:layout_height="1dp"
+            android:background="@color/gray_200"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/container_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/container_any_login">
+
+        <!--  LOGO FACEBOOK  -->
+        <LinearLayout
+            android:id="@+id/logo_facebook"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_logo"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:contentDescription="@string/logo_facebook"
+                android:src="@drawable/facebook"/>
+
+        </LinearLayout>
+
+        <!--  LOGO GOOGLE  -->
+        <LinearLayout
+            android:id="@+id/logo_google"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/rounded_logo"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:contentDescription="@string/logo_google"
+                android:src="@drawable/google"/>
+        </LinearLayout>
+
+        <!--  LOGO APPLE  -->
+        <LinearLayout
+            android:id="@+id/logo_apple"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_logo"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:contentDescription="@string/logo_apple"
+                android:src="@drawable/apple"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,7 +49,7 @@
                     android:id="@+id/tv_total_coin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="250"
+                    android:text="@string/img_total_coin"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -57,7 +57,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total Koin"
+                    android:text="@string/total_koin"
                     android:textSize="14sp"
                     android:textColor="@color/black" />
             </LinearLayout>
@@ -94,7 +94,7 @@
                     android:id="@+id/tv_total_missions"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3"
+                    android:text="@string/total_mission_success"
                     android:textColor="@color/green_normal"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -102,7 +102,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Misi Selesai"
+                    android:text="@string/misi_selesai"
                     android:textSize="14sp"
                     android:textColor="@color/black" />
             </LinearLayout>
@@ -140,7 +140,7 @@
                 android:id="@+id/tv_exchange_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tukarkan koin dengan hadiah menarik"
+                android:text="@string/Reward"
                 android:textSize="12sp"
                 android:textColor="@color/black" />
 
@@ -150,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:backgroundTint="@color/white"
-                android:text="Tukarkan"
+                android:text="@string/exchange"
                 android:textColor="@color/green_normal" />
         </LinearLayout>
     </LinearLayout>
@@ -161,7 +161,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Semua Misi"
+        android:text="@string/all_mission"
         android:textSize="16sp"
         android:textColor="@color/black"
         android:textStyle="bold"

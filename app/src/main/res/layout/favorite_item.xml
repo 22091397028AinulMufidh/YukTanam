@@ -41,12 +41,12 @@
 
     <ImageView
         android:id="@+id/plantImage"
-        android:layout_width="170dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="67dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="74dp"
         android:layout_toEndOf="@id/plantType"
         android:scaleType="centerCrop"
-        android:src="@drawable/sample_plant" />
+        android:src="@drawable/plant" />
 
     <Button
         android:id="@+id/buttonDetail"

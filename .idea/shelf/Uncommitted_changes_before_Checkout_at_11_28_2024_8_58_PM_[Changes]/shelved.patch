@@ -1,0 +1,475 @@
+Index: app/src/main/res/layout/favorite_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:layout_margin=\"8dp\"\r\n    android:background=\"@drawable/card_rounded\"\r\n    android:padding=\"16dp\">\r\n\r\n    <!-- Plant name -->\r\n    <TextView\r\n        android:id=\"@+id/plantName\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Leon\"\r\n        android:textSize=\"18sp\"\r\n        android:textStyle=\"bold\"\r\n        android:textColor=\"#000000\" />\r\n\r\n    <!-- Plant type -->\r\n    <TextView\r\n        android:id=\"@+id/plantType\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@id/plantName\"\r\n        android:text=\"Monstera\"\r\n        android:textSize=\"14sp\"\r\n        android:textColor=\"#7A7A7A\" />\r\n\r\n    <!-- Heart icon for favoriting -->\r\n    <ImageView\r\n        android:id=\"@+id/heartIcon\"\r\n        android:layout_width=\"24dp\"\r\n        android:layout_height=\"24dp\"\r\n        android:layout_alignParentEnd=\"true\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:src=\"@drawable/ic_favorite_filled\" />\r\n    <!-- Plant image -->\r\n\r\n\r\n    <!-- Detail button -->\r\n\r\n    <ImageView\r\n        android:id=\"@+id/plantImage\"\r\n        android:layout_width=\"170dp\"\r\n        android:layout_height=\"84dp\"\r\n        android:layout_marginStart=\"67dp\"\r\n        android:layout_toEndOf=\"@id/plantType\"\r\n        android:scaleType=\"centerCrop\"\r\n        android:src=\"@drawable/sample_plant\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/buttonDetail\"\r\n        android:layout_width=\"75dp\"\r\n        android:layout_height=\"30dp\"\r\n        android:layout_below=\"@id/plantType\"\r\n        android:layout_alignStart=\"@id/plantType\"\r\n        android:layout_marginTop=\"8dp\"\r\n        android:background=\"@drawable/button_rounded\"\r\n        android:text=\"Detail\"\r\n        android:textSize=\"10sp\"\r\n        android:textColor=\"#FFFFFF\" />\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/favorite_item.xml b/app/src/main/res/layout/favorite_item.xml
+--- a/app/src/main/res/layout/favorite_item.xml	(revision fe0917c98eaa340c0d4a2a0ac4fe4f1907f206db)
++++ b/app/src/main/res/layout/favorite_item.xml	(date 1732772165716)
+@@ -41,12 +41,12 @@
+ 
+     <ImageView
+         android:id="@+id/plantImage"
+-        android:layout_width="170dp"
+-        android:layout_height="84dp"
+-        android:layout_marginStart="67dp"
++        android:layout_width="120dp"
++        android:layout_height="120dp"
++        android:layout_marginStart="74dp"
+         android:layout_toEndOf="@id/plantType"
+         android:scaleType="centerCrop"
+-        android:src="@drawable/sample_plant" />
++        android:src="@drawable/plant" />
+ 
+     <Button
+         android:id="@+id/buttonDetail"
+Index: app/src/main/res/layout/challenge_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.cardview.widget.CardView\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:layout_marginVertical=\"8dp\"\r\n    app:cardCornerRadius=\"8dp\"\r\n    app:cardElevation=\"4dp\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"vertical\"\r\n        android:padding=\"16dp\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_challenge_title\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Judul Misi\"\r\n            android:textSize=\"16sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_challenge_description\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Deskripsi Misi\"\r\n            android:textSize=\"14sp\"\r\n            android:textColor=\"@color/gray\" />\r\n\r\n        <ProgressBar\r\n            android:id=\"@+id/progress_challenge\"\r\n            style=\"@android:style/Widget.ProgressBar.Horizontal\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"8dp\"\r\n            android:layout_marginTop=\"8dp\"\r\n            android:progress=\"50\"\r\n            android:progressTint=\"@color/green_normal\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_challenge_reward\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"8dp\"\r\n            android:text=\"25 Koin\"\r\n            android:textSize=\"14sp\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"@color/black\" />\r\n    </LinearLayout>\r\n</androidx.cardview.widget.CardView>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/challenge_item.xml b/app/src/main/res/layout/challenge_item.xml
+--- a/app/src/main/res/layout/challenge_item.xml	(revision fe0917c98eaa340c0d4a2a0ac4fe4f1907f206db)
++++ b/app/src/main/res/layout/challenge_item.xml	(date 1732772911255)
+@@ -8,45 +8,75 @@
+     app:cardCornerRadius="8dp"
+     app:cardElevation="4dp">
+ 
+-    <LinearLayout
++    <androidx.constraintlayout.widget.ConstraintLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+-        android:orientation="vertical"
+-        android:padding="16dp">
++        android:padding="16dp"
++        android:background="@color/white">
+ 
++        <!-- Judul Misi -->
+         <TextView
+             android:id="@+id/tv_challenge_title"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Judul Misi"
+             android:textSize="16sp"
+-            android:textStyle="bold" />
++            android:textStyle="bold"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintStart_toStartOf="parent" />
+ 
++        <!-- Deskripsi Misi -->
+         <TextView
+             android:id="@+id/tv_challenge_description"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Deskripsi Misi"
+             android:textSize="14sp"
+-            android:textColor="@color/gray" />
++            android:textColor="@color/gray"
++            app:layout_constraintTop_toBottomOf="@id/tv_challenge_title"
++            app:layout_constraintStart_toStartOf="parent" />
+ 
++        <!-- Progress Bar -->
+         <ProgressBar
+             android:id="@+id/progress_challenge"
+             style="@android:style/Widget.ProgressBar.Horizontal"
+-            android:layout_width="match_parent"
++            android:layout_width="0dp"
+             android:layout_height="8dp"
+             android:layout_marginTop="8dp"
+             android:progress="50"
+-            android:progressTint="@color/green_normal" />
++            android:progressTint="@color/green_normal"
++            app:layout_constraintTop_toBottomOf="@id/tv_challenge_description"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintEnd_toEndOf="parent" />
++
++        <!-- Ikon dan Angka Koin -->
++        <LinearLayout
++            android:id="@+id/coin_section"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:orientation="horizontal"
++            android:gravity="center"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintEnd_toEndOf="parent">
+ 
+-        <TextView
+-            android:id="@+id/tv_challenge_reward"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:layout_marginTop="8dp"
+-            android:text="25 Koin"
+-            android:textSize="14sp"
+-            android:textStyle="bold"
+-            android:textColor="@color/black" />
+-    </LinearLayout>
++            <!-- Gambar Koin -->
++            <ImageView
++                android:id="@+id/iv_coin_icon"
++                android:layout_width="16dp"
++                android:layout_height="16dp"
++                android:layout_marginEnd="4dp"
++                android:src="@drawable/koin"
++                android:contentDescription="@string/coin_icon" />
++
++            <!-- Angka Koin -->
++            <TextView
++                android:id="@+id/tv_challenge_reward"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="25"
++                android:textSize="14sp"
++                android:textStyle="bold"
++                android:textColor="@color/black" />
++        </LinearLayout>
++    </androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.cardview.widget.CardView>
+Index: app/src/main/java/com/example/yuktanam/ui/challenge/ChallengeViewModel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.yuktanam.ui.challenge\n\nimport androidx.lifecycle.LiveData\nimport androidx.lifecycle.MutableLiveData\nimport androidx.lifecycle.ViewModel\n\ndata class Challenge(val title: String, val description: String, val progress: Int, val reward: String)\n\nclass ChallengeViewModel : ViewModel() {\n\n    private val _challenges = MutableLiveData<List<Challenge>>().apply {\n        value = listOf(\n            Challenge(\"Scan tanaman\", \"Melakukan pemindaian tanaman sebanyak 1 kali\", 50, \"25 Koin\"),\n            Challenge(\"Tambahkan tanaman\", \"Tambahkan sebanyak 3 tanaman di menu beranda\", 75, \"75 Koin\"),\n            Challenge(\"Tambahkan tanaman\", \"Tambahkan sebanyak 10 tanaman di menu beranda\", 30, \"300 Koin\"),\n            Challenge(\"Tanaman favorite\", \"Tambahkan sebanyak 4 tanaman favorit Anda\", 60, \"60 Koin\")\n        )\n    }\n    val challenges: LiveData<List<Challenge>> = _challenges\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/yuktanam/ui/challenge/ChallengeViewModel.kt b/app/src/main/java/com/example/yuktanam/ui/challenge/ChallengeViewModel.kt
+--- a/app/src/main/java/com/example/yuktanam/ui/challenge/ChallengeViewModel.kt	(revision fe0917c98eaa340c0d4a2a0ac4fe4f1907f206db)
++++ b/app/src/main/java/com/example/yuktanam/ui/challenge/ChallengeViewModel.kt	(date 1732772165691)
+@@ -10,10 +10,10 @@
+ 
+     private val _challenges = MutableLiveData<List<Challenge>>().apply {
+         value = listOf(
+-            Challenge("Scan tanaman", "Melakukan pemindaian tanaman sebanyak 1 kali", 50, "25 Koin"),
+-            Challenge("Tambahkan tanaman", "Tambahkan sebanyak 3 tanaman di menu beranda", 75, "75 Koin"),
+-            Challenge("Tambahkan tanaman", "Tambahkan sebanyak 10 tanaman di menu beranda", 30, "300 Koin"),
+-            Challenge("Tanaman favorite", "Tambahkan sebanyak 4 tanaman favorit Anda", 60, "60 Koin")
++            Challenge("Scan tanaman", "Melakukan pemindaian tanaman sebanyak 1 kali", 50, "25"),
++            Challenge("Tambahkan tanaman", "Tambahkan sebanyak 3 tanaman di menu beranda", 75, "75"),
++            Challenge("Tambahkan tanaman", "Tambahkan sebanyak 10 tanaman di menu beranda", 30, "300"),
++            Challenge("Tanaman favorite", "Tambahkan sebanyak 4 tanaman favorit Anda", 60, "60")
+         )
+     }
+     val challenges: LiveData<List<Challenge>> = _challenges
+Index: app/src/main/java/com/example/yuktanam/ui/favorite/FavoriteViewModel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.yuktanam.ui.favorite\n\nimport androidx.lifecycle.LiveData\nimport androidx.lifecycle.MutableLiveData\nimport androidx.lifecycle.ViewModel\nimport com.example.yuktanam.R\n\ndata class FavoriteItem(val name: String, val type: String, val imageResId: Int)\n\nclass FavoriteViewModel : ViewModel() {\n\n    // Sample list of favorite items\n    private val _favoriteItems = MutableLiveData<List<FavoriteItem>>().apply {\n        value = listOf(\n            FavoriteItem(\"Leon\", \"Monstera\", R.drawable.sample_plant),\n            FavoriteItem(\"Deona\", \"Anthurium\", R.drawable.sample_plant),\n            FavoriteItem(\"Deona\", \"Anthurium\", R.drawable.sample_plant),\n            FavoriteItem(\"Deona\", \"Anthurium\", R.drawable.sample_plant),\n        )\n    }\n    val favoriteItems: LiveData<List<FavoriteItem>> = _favoriteItems\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/yuktanam/ui/favorite/FavoriteViewModel.kt b/app/src/main/java/com/example/yuktanam/ui/favorite/FavoriteViewModel.kt
+--- a/app/src/main/java/com/example/yuktanam/ui/favorite/FavoriteViewModel.kt	(revision fe0917c98eaa340c0d4a2a0ac4fe4f1907f206db)
++++ b/app/src/main/java/com/example/yuktanam/ui/favorite/FavoriteViewModel.kt	(date 1732772754039)
+@@ -12,10 +12,8 @@
+     // Sample list of favorite items
+     private val _favoriteItems = MutableLiveData<List<FavoriteItem>>().apply {
+         value = listOf(
+-            FavoriteItem("Leon", "Monstera", R.drawable.sample_plant),
+-            FavoriteItem("Deona", "Anthurium", R.drawable.sample_plant),
+-            FavoriteItem("Deona", "Anthurium", R.drawable.sample_plant),
+-            FavoriteItem("Deona", "Anthurium", R.drawable.sample_plant),
++            FavoriteItem("Leon", "Monstera", R.drawable.plant),
++            FavoriteItem("Deona", "Anthurium", R.drawable.tropical),
+         )
+     }
+     val favoriteItems: LiveData<List<FavoriteItem>> = _favoriteItems
+Index: app/src/main/res/layout/fragment_challenge.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:padding=\"16dp\"\n    tools:context=\".ui.challenge.ChallengeFragment\">\n\n    <!-- Top Section -->\n    <LinearLayout\n        android:id=\"@+id/top_section\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"wrap_content\"\n        android:orientation=\"horizontal\"\n        android:background=\"@color/light_active\"\n        android:padding=\"16dp\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\">\n\n        <LinearLayout\n            android:layout_width=\"0dp\"\n            android:layout_height=\"wrap_content\"\n            android:layout_weight=\"1\"\n            android:orientation=\"vertical\"\n            android:gravity=\"center\">\n\n            <TextView\n                android:id=\"@+id/tv_total_coin\"\n                android:layout_width=\"wrap_content\"\n                android:layout_height=\"wrap_content\"\n                android:text=\"250\"\n                android:textColor=\"@color/black\"\n                android:textSize=\"24sp\"\n                android:textStyle=\"bold\" />\n\n            <TextView\n                android:layout_width=\"wrap_content\"\n                android:layout_height=\"wrap_content\"\n                android:text=\"Total Koin\"\n                android:textSize=\"14sp\"\n                android:textColor=\"@color/black\" />\n        </LinearLayout>\n\n        <LinearLayout\n            android:layout_width=\"0dp\"\n            android:layout_height=\"wrap_content\"\n            android:layout_weight=\"1\"\n            android:orientation=\"vertical\"\n            android:gravity=\"center\">\n\n            <TextView\n                android:id=\"@+id/tv_total_missions\"\n                android:layout_width=\"wrap_content\"\n                android:layout_height=\"wrap_content\"\n                android:text=\"3\"\n                android:textColor=\"@color/green_normal\"\n                android:textSize=\"24sp\"\n                android:textStyle=\"bold\" />\n\n            <TextView\n                android:layout_width=\"wrap_content\"\n                android:layout_height=\"wrap_content\"\n                android:text=\"Misi selesai\"\n                android:textSize=\"14sp\"\n                android:textColor=\"@color/black\" />\n        </LinearLayout>\n    </LinearLayout>\n\n    <!-- List of Challenges -->\n    <androidx.recyclerview.widget.RecyclerView\n        android:id=\"@+id/rv_challenges\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"0dp\"\n        android:layout_marginTop=\"16dp\"\n        app:layout_constraintTop_toBottomOf=\"@id/top_section\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        tools:listitem=\"@layout/challenge_item\" />\n</androidx.constraintlayout.widget.ConstraintLayout>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_challenge.xml b/app/src/main/res/layout/fragment_challenge.xml
+--- a/app/src/main/res/layout/fragment_challenge.xml	(revision fe0917c98eaa340c0d4a2a0ac4fe4f1907f206db)
++++ b/app/src/main/res/layout/fragment_challenge.xml	(date 1732772663473)
+@@ -8,76 +8,175 @@
+     android:padding="16dp"
+     tools:context=".ui.challenge.ChallengeFragment">
+ 
+-    <!-- Top Section -->
+-    <LinearLayout
++    <!-- Header Section -->
++    <androidx.constraintlayout.widget.ConstraintLayout
+         android:id="@+id/top_section"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+-        android:orientation="horizontal"
+-        android:background="@color/light_active"
+-        android:padding="16dp"
++        android:layout_marginBottom="16dp"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintEnd_toEndOf="parent">
+ 
++        <!-- Total Coins Section (Kiri) -->
+         <LinearLayout
++            android:id="@+id/coin_section"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+-            android:layout_weight="1"
+-            android:orientation="vertical"
+-            android:gravity="center">
++            android:layout_marginEnd="8dp"
++            android:orientation="horizontal"
++            android:gravity="center_vertical"
++            android:background="@drawable/challenge_left_shape"
++            android:padding="16dp"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintBottom_toBottomOf="parent">
++
++            <ImageView
++                android:id="@+id/iv_coin_icon"
++                android:layout_width="40dp"
++                android:layout_height="40dp"
++                android:layout_marginEnd="8dp"
++                android:src="@drawable/koin"
++                android:contentDescription="@string/coin_icon" />
++
++            <LinearLayout
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:orientation="vertical">
+ 
+-            <TextView
+-                android:id="@+id/tv_total_coin"
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:text="250"
+-                android:textColor="@color/black"
+-                android:textSize="24sp"
+-                android:textStyle="bold" />
++                <TextView
++                    android:id="@+id/tv_total_coin"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:text="250"
++                    android:textColor="@color/black"
++                    android:textSize="20sp"
++                    android:textStyle="bold" />
+ 
+-            <TextView
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:text="Total Koin"
+-                android:textSize="14sp"
+-                android:textColor="@color/black" />
++                <TextView
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:text="Total Koin"
++                    android:textSize="14sp"
++                    android:textColor="@color/black" />
++            </LinearLayout>
+         </LinearLayout>
+ 
++        <!-- Total Missions Section (Kanan) -->
+         <LinearLayout
++            android:id="@+id/mission_section"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+-            android:layout_weight="1"
+-            android:orientation="vertical"
+-            android:gravity="center">
++            android:layout_marginStart="8dp"
++            android:orientation="horizontal"
++            android:gravity="center_vertical"
++            android:background="@drawable/challenge_right_shape"
++            android:padding="16dp"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintBottom_toBottomOf="parent">
++
++            <ImageView
++                android:id="@+id/iv_mission_icon"
++                android:layout_width="40dp"
++                android:layout_height="40dp"
++                android:layout_marginEnd="8dp"
++                android:src="@drawable/misi"
++                android:contentDescription="@string/mission_icon" />
++
++            <LinearLayout
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:orientation="vertical">
+ 
+-            <TextView
+-                android:id="@+id/tv_total_missions"
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:text="3"
+-                android:textColor="@color/green_normal"
+-                android:textSize="24sp"
+-                android:textStyle="bold" />
++                <TextView
++                    android:id="@+id/tv_total_missions"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:text="3"
++                    android:textColor="@color/green_normal"
++                    android:textSize="20sp"
++                    android:textStyle="bold" />
+ 
+-            <TextView
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:text="Misi selesai"
+-                android:textSize="14sp"
+-                android:textColor="@color/black" />
++                <TextView
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:text="Misi Selesai"
++                    android:textSize="14sp"
++                    android:textColor="@color/black" />
++            </LinearLayout>
+         </LinearLayout>
++    </androidx.constraintlayout.widget.ConstraintLayout>
++
++    <!-- Exchange Section -->
++    <LinearLayout
++        android:id="@+id/exchange_section"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:orientation="horizontal"
++        android:background="@color/light_active"
++        android:padding="16dp"
++        android:layout_marginTop="16dp"
++        app:layout_constraintTop_toBottomOf="@id/top_section"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintEnd_toEndOf="parent">
++
++        <ImageView
++            android:id="@+id/iv_exchange_icon"
++            android:layout_width="60dp"
++            android:layout_height="100dp"
++            android:layout_marginEnd="8dp"
++            android:src="@drawable/hadiah"
++            android:contentDescription="@string/exchange_icon" />
++
++        <LinearLayout
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:layout_weight="1"
++            android:orientation="vertical">
++
++            <TextView
++                android:id="@+id/tv_exchange_title"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="Tukarkan koin dengan hadiah menarik"
++                android:textSize="12sp"
++                android:textColor="@color/black" />
++
++            <Button
++                android:id="@+id/btn_exchange"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginTop="8dp"
++                android:backgroundTint="@color/white"
++                android:text="Tukarkan"
++                android:textColor="@color/green_normal" />
++        </LinearLayout>
+     </LinearLayout>
+ 
+     <!-- List of Challenges -->
++    <TextView
++        android:id="@+id/tv_section_title"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="16dp"
++        android:text="Semua Misi"
++        android:textSize="16sp"
++        android:textColor="@color/black"
++        android:textStyle="bold"
++        app:layout_constraintTop_toBottomOf="@id/exchange_section"
++        app:layout_constraintStart_toStartOf="parent" />
++
+     <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/rv_challenges"
+         android:layout_width="0dp"
+         android:layout_height="0dp"
+-        android:layout_marginTop="16dp"
+-        app:layout_constraintTop_toBottomOf="@id/top_section"
++        android:layout_marginTop="8dp"
++        app:layout_constraintTop_toBottomOf="@id/tv_section_title"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintBottom_toBottomOf="parent"
+         tools:listitem="@layout/challenge_item" />
++
+ </androidx.constraintlayout.widget.ConstraintLayout>
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\n    <string name=\"app_name\">YukTanam</string>\n    <string name=\"logo\">Logo YukTanam</string>\n\n    <!--  Login  -->\n    <string name=\"login\">Masuk</string>\n    <string name=\"email_password\">Masukan alamat email dan password Anda untuk Masuk</string>\n    <string name=\"forget_password\">Lupa kata sandi?</string>\n    <string name=\"dont_have_account\">Tidak punya akun?</string>\n    <string name=\"logo_email\">Email</string>\n    <string name=\"logo_password\">Password</string>\n    <string name=\"email_hint\">Masukan alamat email kamu</string>\n    <string name=\"password_hint\">Masukan kata sandi kamu</string>\n    <string name=\"register\">Daftar</string>\n    <string name=\"any_login\">Masuk dengan</string>\n    <string name=\"logo_facebook\">Facebook</string>\n    <string name=\"logo_google\">Google</string>\n    <string name=\"logo_apple\">Apple</string>\n    <string name=\"error_email_is_not_valid\">Alamat Email tidak valid</string>\n    <string name=\"error_password_too_short\">Kata sandi setidaknya harus 8 karakter</string>\n\n    <!-- Bottom Navigation   -->\n    <string name=\"title_home\">Beranda</string>\n    <string name=\"title_challenge\">Tantangan</string>\n    <string name=\"title_scan\">Deteksi</string>\n    <string name=\"title_favorite\">Favorit</string>\n    <string name=\"title_profile\">Profile</string>\n\n    <!-- Profile   -->\n    <string name=\"name_profile\">Ederson</string>\n    <string name=\"addres\">Surabaya, Jawa Timur</string>\n\n    <!-- Menu Setting Profile   -->\n    <string name=\"title_address\">Alamat</string>\n    <string name=\"title_language\">Bahasa</string>\n    <string name=\"title_dark_mode\">Mode Gelap</string>\n    <string name=\"title_schedule\">Jadwal</string>\n    <string name=\"title_help\">Bantuan</string>\n    <string name=\"title_privacy\">Kebijakan Privasi</string>\n    <string name=\"title_terms\">Kebijakan Penggunaan</string>\n\n    <!--  Home  -->\n    <string name=\"category\">Kategori</string>\n    <string name=\"see_all\">Lihat semua</string>\n    <string name=\"tropis\">Tropis</string>\n    <string name=\"sukulen\">Sukulen</string>\n    <string name=\"hias\">Hias</string>\n    <string name=\"myplant\">Tanaman Ku</string>\n\n    <!--  MY PLants  -->\n    <string name=\"leon\">Leon</string>\n    <string name=\"monstera\">Monstera</string>\n\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision fe0917c98eaa340c0d4a2a0ac4fe4f1907f206db)
++++ b/app/src/main/res/values/strings.xml	(date 1732772663457)
+@@ -50,5 +50,10 @@
+     <!--  MY PLants  -->
+     <string name="leon">Leon</string>
+     <string name="monstera">Monstera</string>
++    <string name="exchange_icon">Exchange Icon</string>
++    <string name="mission_icon">Mission Icon</string>
++    <string name="coin_icon">Coin Icon</string>
++
++    <!--Challenge-->
+ 
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/drawable/challenge_right_shape.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/challenge_right_shape.xml b/app/src/main/res/drawable/challenge_right_shape.xml
+new file mode 100644
+--- /dev/null	(date 1732772165732)
++++ b/app/src/main/res/drawable/challenge_right_shape.xml	(date 1732772165732)
+@@ -0,0 +1,5 @@
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <solid android:color="@color/white" />
++    <corners android:topRightRadius="16dp" android:bottomRightRadius="16dp" android:bottomLeftRadius="16dp" android:topLeftRadius="16dp"/>
++    <stroke android:color="@color/gray" android:width="1dp" />
++</shape>
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"gradleJvm\" value=\"#GRADLE_LOCAL_JAVA_HOME\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n            <option value=\"$PROJECT_DIR$/app\" />\n          </set>\n        </option>\n        <option name=\"resolveExternalAnnotations\" value=\"false\" />\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision fe0917c98eaa340c0d4a2a0ac4fe4f1907f206db)
++++ b/.idea/gradle.xml	(date 1732772165721)
+@@ -4,6 +4,7 @@
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
++        <option name="testRunner" value="CHOOSE_PER_TEST" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+         <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+         <option name="modules">
+Index: app/src/main/res/drawable/challenge_left_shape.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/challenge_left_shape.xml b/app/src/main/res/drawable/challenge_left_shape.xml
+new file mode 100644
+--- /dev/null	(date 1732772165727)
++++ b/app/src/main/res/drawable/challenge_left_shape.xml	(date 1732772165727)
+@@ -0,0 +1,5 @@
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <solid android:color="@color/white" />
++    <corners android:topLeftRadius="16dp" android:bottomLeftRadius="16dp" android:bottomRightRadius="16dp" android:topRightRadius="16dp"/>
++    <stroke android:color="@color/gray" android:width="1dp" />
++</shape>

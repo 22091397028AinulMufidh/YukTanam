@@ -14,23 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YukTanam"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:exported="false" />
         <!-- Splash Screen sebagai aktivitas awal -->
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Main Activity -->
+        </activity> <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
-
-        <!-- Login Activity -->
+            android:exported="true" /> <!-- Login Activity -->
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false" />

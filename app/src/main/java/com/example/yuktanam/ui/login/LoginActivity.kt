@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.yuktanam.MainActivity
 import com.example.yuktanam.databinding.ActivityLoginBinding
+import com.example.yuktanam.ui.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -19,6 +20,14 @@ class LoginActivity : AppCompatActivity() {
         val loginButton = binding.btnLogin
         loginButton.setOnClickListener {
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        // TEXT BUTTON REGISTER
+        val textRegister = binding.textRegister
+        textRegister.setOnClickListener{
+            val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(intent)
             finish()
         }

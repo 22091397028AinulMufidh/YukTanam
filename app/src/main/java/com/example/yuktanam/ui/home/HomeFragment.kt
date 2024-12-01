@@ -143,13 +143,13 @@ class HomeFragment : Fragment() {
         val plantList = listOf(
             Plant("Leon", "Monstera", R.drawable.sukulen, false),
             Plant("Aloe Vera", "Africa", R.drawable.tropical, false),
-            Plant("Leon", "Monstera", R.drawable.sukulen, false),
+//            Plant("Leon", "Monstera", R.drawable.sukulen, false),
         )
 
         // Inisialisasi RecyclerView
         adapter = PlantAdapter(plantList)
         binding.recyclerView.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.recyclerView.adapter = adapter
     }
 

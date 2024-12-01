@@ -1,5 +1,6 @@
 package com.example.yuktanam.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -17,6 +18,7 @@ import com.example.yuktanam.logic.home.recyclerview.Plant
 import com.example.yuktanam.logic.home.recyclerview.PlantAdapter
 import com.example.yuktanam.logic.slider.ImageAdapter
 import com.example.yuktanam.logic.slider.ImageItem
+import com.example.yuktanam.ui.addplants.AddPlantActivity
 import java.util.UUID
 
 class HomeFragment : Fragment() {
@@ -47,10 +49,23 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+
+
         setupViewPager()
         setupRecyclerView()
+        ButtonAddPlants()
 
         return binding.root
+    }
+
+    // Function Add Plans
+    private fun ButtonAddPlants() {
+        val btnAddPlant = binding.addPlants
+        btnAddPlant.setOnClickListener {
+            val intent = Intent(requireContext(), AddPlantActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
     }
 
     private fun setupViewPager() {

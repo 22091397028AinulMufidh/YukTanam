@@ -56,7 +56,7 @@
     <!--  MY PLants  -->
     <string name="leon">Leon</string>
     <string name="monstera">Monstera</string>
-
+    
     <!-- Add Plants -->
     <string name="back">Kembali</string>
     <string name="thumbnail_image">Gambar Tanaman</string>
@@ -67,5 +67,23 @@
     <string name="hint_call_name">Masukan panggilan tanaman</string>
     <string name="hint_origin_name">Masukan nama tanaman</string>
     <string name="btnAddPlants">Tambahkan</string>
+
+    <!--    Challenge Item-->
+    <string name="judul_misi">Judul Misi</string>
+    <string name="deskripsi_misi">Deskripsi Misi</string>
+    <string name="koin">25</string>
+    <string name="coin_icon">Icon Coin</string>
+    <string name="img_total_coin">250</string>
+    <string name="total_koin">Total Koin</string>
+
+<!--    Fragment Challenge-->
+    <string name="mission_icon">Mission Icon</string>
+    <string name="total_mission_success">3</string>
+    <string name="misi_selesai">Misi Selesai</string>
+    <string name="exchange_icon">Exchange Icon</string>
+    <string name="Reward">Tukarkan koin dengan hadiah menarik</string>
+    <string name="exchange">Tukarkan</string>
+    <string name="all_mission">Semua Misi</string>
+    
 
 </resources>

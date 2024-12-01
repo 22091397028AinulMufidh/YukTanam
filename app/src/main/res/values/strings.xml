@@ -57,4 +57,15 @@
     <string name="leon">Leon</string>
     <string name="monstera">Monstera</string>
 
+    <!-- Add Plants -->
+    <string name="back">Kembali</string>
+    <string name="thumbnail_image">Gambar Tanaman</string>
+    <string name="text_upload">Unggah gambar</string>
+    <string name="text_camera">Ambil gambar</string>
+    <string name="call_name">Nama panggilan Tanaman</string>
+    <string name="origin_name">Nama Tanaman</string>
+    <string name="hint_call_name">Masukan panggilan tanaman</string>
+    <string name="hint_origin_name">Masukan nama tanaman</string>
+    <string name="btnAddPlants">Tambahkan</string>
+
 </resources>

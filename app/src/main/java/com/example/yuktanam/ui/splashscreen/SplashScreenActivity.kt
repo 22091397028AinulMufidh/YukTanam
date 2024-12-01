@@ -18,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Simulasikan delay splash screen
+        // delay splash screen
         Handler(Looper.getMainLooper()).postDelayed({
             val isLoggedIn = checkUserLoginStatus()
             val intent = if (isLoggedIn) {

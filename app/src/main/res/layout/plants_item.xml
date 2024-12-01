@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card_content_1"
-        android:layout_width="170dp"
+        android:layout_width="165dp"
         android:layout_height="200dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/card_plants"
@@ -72,7 +72,7 @@
     <!-- Card Content 2 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card_content_2"
-        android:layout_width="170dp"
+        android:layout_width="165dp"
         android:layout_height="200dp"
         android:background="@drawable/card_plants"
         android:padding="8dp">

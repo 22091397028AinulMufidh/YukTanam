@@ -55,6 +55,7 @@
 
         <!-- CONTAINER BUTTON UPLOAD -->
         <LinearLayout
+            android:id="@+id/btnGaleri"
             android:layout_width="130dp"
             android:layout_height="100dp"
             android:layout_marginStart="16dp"
@@ -66,6 +67,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:contentDescription="@string/text_upload"
                 android:src="@drawable/ic_upload"/>
 
             <!-- TXET UPLOAD -->
@@ -77,11 +79,13 @@
                 android:textColor="@color/green_dark_active"
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginTop="15dp"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                tools:ignore="SmallSp" />
         </LinearLayout>
 
         <!-- CONTAINER BUTTON CAMERA -->
         <LinearLayout
+            android:id="@+id/btnCamera"
             android:layout_width="130dp"
             android:layout_height="100dp"
             android:layout_marginStart="16dp"
@@ -93,6 +97,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:contentDescription="@string/text_camera"
                 android:src="@drawable/ic_camera"/>
 
             <!-- TXET CAMERA -->
@@ -104,7 +109,8 @@
                 android:textColor="@color/green_dark_active"
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginTop="15dp"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                tools:ignore="SmallSp" />
         </LinearLayout>
         
     </LinearLayout>
@@ -154,7 +160,8 @@
                 android:background="@android:color/transparent"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                android:padding="8dp" />
+                android:padding="8dp"
+                tools:ignore="Autofill,TextFields" />
         </LinearLayout>
 
         <!-- TEXT NAMA ASLI TANAMAN -->
@@ -191,7 +198,8 @@
                 android:background="@android:color/transparent"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                android:padding="8dp" />
+                android:padding="8dp"
+                tools:ignore="Autofill,TextFields" />
         </LinearLayout>
 
     </LinearLayout>

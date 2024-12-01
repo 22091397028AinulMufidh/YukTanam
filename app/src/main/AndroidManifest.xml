@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YukTanam"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.addplants.CameraActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.addplants.AddPlantActivity"
             android:exported="false" />

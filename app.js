@@ -5,6 +5,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const cookieParse = require("cookie-parser");
 const AuthRouter = require("./routing/AuthRouter");
+const GamificationRouter = require("./routing/GamificationRouter");
 const { errorHandler, notFound } = require("./middleware/errorMiddleware");
 
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(cors());
 
 //Routing
 app.use("/api/v1/auth", AuthRouter);
+app.use("/api/v1/gamification", GamificationRouter);
 
 app.use(notFound);
 app.use(errorHandler);

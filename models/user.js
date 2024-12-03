@@ -42,6 +42,19 @@ module.exports = (sequelize, DataTypes) => {
       role_id: {
         type: DataTypes.UUID,
       },
+      points: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+        allowNull: false,
+      },
+      title: {
+        type: DataTypes.STRING,
+        defaultValue: "Ingin Punya Taman",
+        allowNull: false,
+      },
+      last_check_in: {
+        type: DataTypes.DATE,
+      },
     },
     {
       hooks: {

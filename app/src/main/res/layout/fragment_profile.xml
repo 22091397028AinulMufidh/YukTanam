@@ -199,50 +199,6 @@
         app:layout_constraintTop_toBottomOf="@+id/arrow_language"
         app:layout_constraintVertical_bias="0.0" />
 
-    <!-- Menu Setting Schedule -->
-    <ImageView
-        android:id="@+id/icon_schedule"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:gravity="left"
-        android:src="@drawable/ic_schedule"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/icon_dark_mode"
-        tools:ignore="ContentDescription,RtlHardcoded" />
-
-    <TextView
-        android:id="@+id/title_schedule"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="22dp"
-        android:gravity="left"
-        android:text="@string/title_schedule"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/montserrat_regular"
-        app:layout_constraintStart_toEndOf="@id/icon_dark_mode"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_dark_mode"
-        tools:ignore="RtlHardcoded" />
-
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/schedule"
-        android:layout_width="50dp"
-        android:layout_marginEnd="5dp"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/title_dark_mode"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/icon_dark_mode"
-        app:layout_constraintTop_toBottomOf="@+id/switch_theme"
-        app:layout_constraintVertical_bias="0.0" />
 
     <!-- Menu Setting Help -->
     <ImageView
@@ -256,7 +212,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/icon_schedule"
+        app:layout_constraintTop_toBottomOf="@id/icon_dark_mode"
         tools:ignore="ContentDescription,RtlHardcoded" />
 
     <TextView
@@ -270,10 +226,10 @@
         android:textSize="16sp"
         android:textColor="@color/black"
         android:fontFamily="@font/montserrat_regular"
-        app:layout_constraintStart_toEndOf="@id/icon_schedule"
+        app:layout_constraintStart_toEndOf="@id/icon_dark_mode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_schedule"
+        app:layout_constraintTop_toBottomOf="@id/title_dark_mode"
         tools:ignore="RtlHardcoded" />
 
     <ImageView
@@ -284,7 +240,7 @@
         android:src="@drawable/arrow_right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/schedule"
+        app:layout_constraintTop_toBottomOf="@+id/switch_theme"
         app:layout_constraintVertical_bias="0.051"
         tools:ignore="ContentDescription" />
 
@@ -377,5 +333,37 @@
         app:layout_constraintTop_toBottomOf="@+id/arrow_privacy"
         app:layout_constraintVertical_bias="0.051"
         tools:ignore="ContentDescription" />
+
+    <!-- Menu Logout -->
+    <ImageView
+        android:id="@+id/icon_logout"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:gravity="left"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icon_terms"
+        tools:ignore="ContentDescription,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/title_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="22dp"
+        android:gravity="left"
+        android:text="@string/title_logout"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat_regular"
+        app:layout_constraintStart_toEndOf="@id/icon_terms"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_terms"
+        tools:ignore="RtlHardcoded" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

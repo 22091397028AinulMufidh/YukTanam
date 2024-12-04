@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -68,4 +69,10 @@ dependencies {
 
     implementation(libs.androidx.exifinterface)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    implementation(libs.androidx.room.runtime)
+    //noinspection KaptUsageInsteadOfKsp
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
 }

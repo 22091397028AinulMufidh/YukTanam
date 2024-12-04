@@ -12,7 +12,20 @@
           "package_name": "com.example.yuktanam"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "528469011271-n3gmu9fol9n3r6o3mn5j7e1vfqf9kcjn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yuktanam",
+            "certificate_hash": "43e2191c2658e41b3f4ea1441f42186f62af1bb6"
+          }
+        },
+        {
+          "client_id": "528469011271-7qqu73qn8fdt7i47d2dc30k8d7m6inmt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAvad8gSACAKWIA_N83TX_jUDgT7TASMYg"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528469011271-7qqu73qn8fdt7i47d2dc30k8d7m6inmt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

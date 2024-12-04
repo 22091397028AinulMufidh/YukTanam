@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "528469011271",
+    "project_id": "yuktanam-70716",
+    "storage_bucket": "yuktanam-70716.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528469011271:android:2a684cfafb88d3dffe3a62",
+        "android_client_info": {
+          "package_name": "com.example.yuktanam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvad8gSACAKWIA_N83TX_jUDgT7TASMYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

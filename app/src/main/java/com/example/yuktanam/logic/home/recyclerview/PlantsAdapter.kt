@@ -7,9 +7,19 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.yuktanam.R
+import com.example.yuktanam.logic.database.addplant.PlantDatabase
+import com.example.yuktanam.logic.database.addplant.PlantEntity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.util.UUID
 
-class PlantAdapter(private val plantList: List<Plant>) :
-    RecyclerView.Adapter<PlantAdapter.PlantViewHolder>() {
+class PlantAdapter(
+    private var plantList: List<Plant>,
+    private val onFavoriteClick: (Plant, Int) -> Unit
+) : RecyclerView.Adapter<PlantAdapter.PlantViewHolder>() {
+
+    var database: PlantDatabase? = null
 
     // ViewHolder untuk dua kartu sekaligus (kiri dan kanan)
     class PlantViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -42,6 +52,24 @@ class PlantAdapter(private val plantList: List<Plant>) :
             if (plant1.isFavorite) R.drawable.ic_favorite_filled else R.drawable.ic_favorite
         )
 
+        // Listener untuk kartu kiri
+//        holder.favoritePlant1.setOnClickListener {
+//            plant1.isFavorite = !plant1.isFavorite // Toggle status favorit
+//            onFavoriteClick(plant1, position * 2)
+//            notifyItemChanged(position) // Update tampilan
+//        }
+
+        holder.favoritePlant1.setOnClickListener {
+            val plant = plantList[position * 2]
+            plant.isFavorite = !plant.isFavorite
+            if (plant.isFavorite) {
+                saveToDatabase(plant)
+            } else {
+                deleteFromDatabase(plant)
+            }
+            notifyItemChanged(position)
+        }
+
         // Set data untuk kartu kanan jika ada
         if ((position * 2 + 1) < plantList.size) {
             val plant2 = plantList[position * 2 + 1]
@@ -51,6 +79,32 @@ class PlantAdapter(private val plantList: List<Plant>) :
             holder.favoritePlant2.setImageResource(
                 if (plant2.isFavorite) R.drawable.ic_favorite_filled else R.drawable.ic_favorite
             )
+
+            // Listener untuk kartu kanan
+//            holder.favoritePlant2.setOnClickListener {
+//                plant2.isFavorite = !plant2.isFavorite // Toggle status favorit
+//                onFavoriteClick(plant2, position * 2 + 1)
+//                notifyItemChanged(position) // Update tampilan
+//            }
+            holder.favoritePlant2.setOnClickListener {
+                val index = position * 2 + 1
+                if (index < plantList.size) {
+                    val plant = plantList[index]
+                    plant.isFavorite = !plant.isFavorite
+                    if (plant.isFavorite) {
+                        saveToDatabase(plant)
+                    } else {
+                        deleteFromDatabase(plant)
+                    }
+                    notifyItemChanged(position)
+                }
+            }
+
+            // Pastikan kartu kanan terlihat
+            holder.namePlant2.visibility = View.VISIBLE
+            holder.originPlant2.visibility = View.VISIBLE
+            holder.imagePlant2.visibility = View.VISIBLE
+            holder.favoritePlant2.visibility = View.VISIBLE
         } else {
             // Jika tidak ada data untuk kartu kanan, sembunyikan kartu
             holder.namePlant2.visibility = View.GONE
@@ -60,7 +114,40 @@ class PlantAdapter(private val plantList: List<Plant>) :
         }
     }
 
+    private fun saveToDatabase(plant: Plant) {
+        val plantEntity = PlantEntity(
+            id = UUID.randomUUID().toString(),
+            name = plant.name,
+            origin = plant.origin,
+            imageResource = plant.imageResource,
+            isFavorite = true
+        )
+        CoroutineScope(Dispatchers.IO).launch {
+            database?.plantDao()?.insertFavorite(plantEntity)
+        }
+    }
+
+    private fun deleteFromDatabase(plant: Plant) {
+        val plantEntity = PlantEntity(
+            id = UUID.randomUUID().toString(),
+            name = plant.name,
+            origin = plant.origin,
+            imageResource = plant.imageResource,
+            isFavorite = true
+        )
+        CoroutineScope(Dispatchers.IO).launch {
+            database?.plantDao()?.deleteFavorite(plantEntity)
+        }
+    }
+
+    fun updateData(newPlantList: List<Plant>) {
+        plantList = newPlantList
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount(): Int {
         return (plantList.size + 1) / 2 // Setiap baris menampilkan 2 item
     }
 }
+
+

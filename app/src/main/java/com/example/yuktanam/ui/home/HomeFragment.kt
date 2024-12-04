@@ -9,16 +9,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.yuktanam.R
 import com.example.yuktanam.databinding.FragmentHomeBinding
+import com.example.yuktanam.logic.database.addplant.PlantDatabase
+import com.example.yuktanam.logic.database.addplant.PlantEntity
 import com.example.yuktanam.logic.home.recyclerview.Plant
 import com.example.yuktanam.logic.home.recyclerview.PlantAdapter
 import com.example.yuktanam.logic.slider.ImageAdapter
 import com.example.yuktanam.logic.slider.ImageItem
 import com.example.yuktanam.ui.addplants.AddPlantActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.util.UUID
 
 class HomeFragment : Fragment() {
@@ -30,6 +36,7 @@ class HomeFragment : Fragment() {
     private lateinit var pageChangeListener: ViewPager2.OnPageChangeCallback
 
     private lateinit var adapter: PlantAdapter
+    private lateinit var database: PlantDatabase
 
     private val params = LinearLayout.LayoutParams(
         LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -48,47 +55,31 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-
-
+        database = PlantDatabase.getDatabase(requireContext()) // Inisialisasi database
 
         setupViewPager()
         setupRecyclerView()
-        ButtonAddPlants()
+        buttonAddPlants()
 
         return binding.root
     }
 
-    // Function Add Plans
-    private fun ButtonAddPlants() {
+    private fun buttonAddPlants() {
         val btnAddPlant = binding.addPlants
         btnAddPlant.setOnClickListener {
             val intent = Intent(requireContext(), AddPlantActivity::class.java)
             startActivity(intent)
-            requireActivity().finish()
         }
     }
 
     private fun setupViewPager() {
         viewpager2 = binding.viewPager
 
-        // Daftar gambar untuk ViewPager
         val imageList = arrayListOf(
-            ImageItem(
-                UUID.randomUUID().toString(),
-                "https://fastly.picsum.photos/id/866/500/500.jpg?hmac=FOptChXpmOmfR5SpiL2pp74Yadf1T_bRhBF1wJZa9hg"
-            ),
-            ImageItem(
-                UUID.randomUUID().toString(),
-                "https://fastly.picsum.photos/id/270/500/500.jpg?hmac=MK7XNrBrZ73QsthvGaAkiNoTl65ZDlUhEO-6fnd-ZnY"
-            ),
-            ImageItem(
-                UUID.randomUUID().toString(),
-                "https://fastly.picsum.photos/id/866/500/500.jpg?hmac=FOptChXpmOmfR5SpiL2pp74Yadf1T_bRhBF1wJZa9hg"
-            ),
-            ImageItem(
-                UUID.randomUUID().toString(),
-                "https://fastly.picsum.photos/id/270/500/500.jpg?hmac=MK7XNrBrZ73QsthvGaAkiNoTl65ZDlUhEO-6fnd-ZnY"
-            )
+            ImageItem(UUID.randomUUID().toString(), "file:///android_asset/images/slider2.png"),
+            ImageItem(UUID.randomUUID().toString(), "file:///android_asset/images/slider2.png"),
+            ImageItem(UUID.randomUUID().toString(), "file:///android_asset/images/slider2.png"),
+            ImageItem(UUID.randomUUID().toString(), "file:///android_asset/images/slider2.png")
         )
 
         val imageAdapter = ImageAdapter()
@@ -97,7 +88,6 @@ class HomeFragment : Fragment() {
 
         setupDotsIndicator(imageList.size)
 
-        // Listener untuk mengganti indikator dot
         pageChangeListener = object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 updateDotsIndicator(position)
@@ -106,14 +96,11 @@ class HomeFragment : Fragment() {
         }
         viewpager2.registerOnPageChangeCallback(pageChangeListener)
 
-        // Buat Runnable untuk animasi otomatis
         slideRunnable = Runnable {
             val nextPage = (viewpager2.currentItem + 1) % imageList.size
             viewpager2.setCurrentItem(nextPage, true)
-            slideHandler.postDelayed(slideRunnable, 3000) // 3 detik
+            slideHandler.postDelayed(slideRunnable, 3000)
         }
-
-        // Mulai animasi otomatis
         slideHandler.postDelayed(slideRunnable, 3000)
     }
 
@@ -139,15 +126,51 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        // Contoh data tanaman
         val plantList = listOf(
-            Plant("Leon", "Monstera", R.drawable.sukulen, false),
-            Plant("Aloe Vera", "Africa", R.drawable.tropical, false),
-//            Plant("Leon", "Monstera", R.drawable.sukulen, false),
+            Plant(UUID.randomUUID().toString(), "Leon", "Monstera", R.drawable.sukulen, false),
+            Plant(UUID.randomUUID().toString(), "Frisly", "Africa", R.drawable.tropical, false),
+            Plant(UUID.randomUUID().toString(), "Gojo", "Monstera", R.drawable.sukulen, false),
+            Plant(UUID.randomUUID().toString(), "Deona", "Africa", R.drawable.tropical, false)
         )
 
-        // Inisialisasi RecyclerView
-        adapter = PlantAdapter(plantList)
+        adapter = PlantAdapter(plantList) { plant, position ->
+            plant.isFavorite = !plant.isFavorite
+            adapter.notifyItemChanged(position)
+
+            CoroutineScope(Dispatchers.IO).launch {
+                val plantDao = database.plantDao()
+                if (plant.isFavorite) {
+                    plantDao.insertFavorite(
+                        PlantEntity(
+                            id = plant.id,
+                            name = plant.name,
+                            origin = plant.origin,
+                            imageResource = plant.imageResource,
+                            isFavorite = plant.isFavorite
+                        )
+                    )
+                } else {
+                    plantDao.deleteFavorite(
+                        PlantEntity(
+                            id = plant.id,
+                            name = plant.name,
+                            origin = plant.origin,
+                            imageResource = plant.imageResource,
+                            isFavorite = plant.isFavorite
+                        )
+                    )
+                }
+            }
+
+            Toast.makeText(
+                requireContext(),
+                if (plant.isFavorite) "${plant.name} added to favorites!" else "${plant.name} removed from favorites!",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+        adapter.database = database // Sambungkan database ke adapter
+
         binding.recyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.recyclerView.adapter = adapter
@@ -157,8 +180,8 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
 
-        // Unregister listener dan hentikan handler untuk mencegah kebocoran memori
         viewpager2.unregisterOnPageChangeCallback(pageChangeListener)
         slideHandler.removeCallbacks(slideRunnable)
     }
 }
+

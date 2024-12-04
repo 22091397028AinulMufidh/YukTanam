@@ -6,7 +6,7 @@
     <string name="login">Masuk</string>
     <string name="email_password">Masukan alamat email dan password Anda untuk Masuk</string>
     <string name="forget_password">Lupa kata sandi?</string>
-    <string name="dont_have_account">Tidak punya akun?</string>
+    <string name="dont_have_account">Belum memiliki akun?</string>
     <string name="logo_email">Email</string>
     <string name="logo_password">Password</string>
     <string name="email_hint">Masukan alamat email kamu</string>

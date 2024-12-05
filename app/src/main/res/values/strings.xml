@@ -18,6 +18,7 @@
     <string name="logo_apple">Apple</string>
     <string name="error_email_is_not_valid">Alamat Email tidak valid</string>
     <string name="error_password_too_short">Kata sandi setidaknya harus 8 karakter</string>
+    <string name="web_client_id">528469011271-7qqu73qn8fdt7i47d2dc30k8d7m6inmt.apps.googleusercontent.com</string>
 
     <!-- Register -->
     <string name="person">Nama</string>

@@ -1,0 +1,405 @@
+Index: app/src/main/res/layout/favorite_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:layout_margin=\"8dp\"\r\n    android:background=\"@drawable/card_rounded\"\r\n    android:padding=\"16dp\">\r\n\r\n    <!-- Plant name -->\r\n    <TextView\r\n        android:id=\"@+id/plantName\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Leon\"\r\n        android:textSize=\"18sp\"\r\n        android:textStyle=\"bold\"\r\n        android:textColor=\"#000000\" />\r\n\r\n    <!-- Plant type -->\r\n    <TextView\r\n        android:id=\"@+id/plantType\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@id/plantName\"\r\n        android:text=\"Monstera\"\r\n        android:textSize=\"14sp\"\r\n        android:textColor=\"#7A7A7A\" />\r\n\r\n    <!-- Heart icon for favoriting -->\r\n    <ImageView\r\n        android:id=\"@+id/heartIcon\"\r\n        android:layout_width=\"24dp\"\r\n        android:layout_height=\"24dp\"\r\n        android:layout_alignParentEnd=\"true\"\r\n        android:layout_marginEnd=\"8dp\"\r\n        android:src=\"@drawable/ic_favorite_filled\" />\r\n    <!-- Plant image -->\r\n\r\n\r\n    <!-- Detail button -->\r\n\r\n    <ImageView\r\n        android:id=\"@+id/plantImage\"\r\n        android:layout_width=\"120dp\"\r\n        android:layout_height=\"120dp\"\r\n        android:layout_marginStart=\"74dp\"\r\n        android:layout_toEndOf=\"@id/plantType\"\r\n        android:scaleType=\"centerCrop\"\r\n        android:src=\"@drawable/plant\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/buttonDetail\"\r\n        android:layout_width=\"75dp\"\r\n        android:layout_height=\"30dp\"\r\n        android:layout_below=\"@id/plantType\"\r\n        android:layout_alignStart=\"@id/plantType\"\r\n        android:layout_marginTop=\"8dp\"\r\n        android:background=\"@drawable/button_rounded\"\r\n        android:text=\"Detail\"\r\n        android:textSize=\"10sp\"\r\n        android:textColor=\"#FFFFFF\" />\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/favorite_item.xml b/app/src/main/res/layout/favorite_item.xml
+--- a/app/src/main/res/layout/favorite_item.xml	(revision 6cde107affb54a3878e59c9ed9b4c5f2cbf2f5f4)
++++ b/app/src/main/res/layout/favorite_item.xml	(date 1732853267421)
+@@ -11,7 +11,7 @@
+         android:id="@+id/plantName"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="Leon"
++        android:text="@string/leon"
+         android:textSize="18sp"
+         android:textStyle="bold"
+         android:textColor="#000000" />
+@@ -22,7 +22,7 @@
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@id/plantName"
+-        android:text="Monstera"
++        android:text="@string/monstera"
+         android:textSize="14sp"
+         android:textColor="#7A7A7A" />
+ 
+@@ -33,6 +33,7 @@
+         android:layout_height="24dp"
+         android:layout_alignParentEnd="true"
+         android:layout_marginEnd="8dp"
++        android:contentDescription="@string/icon_fav"
+         android:src="@drawable/ic_favorite_filled" />
+     <!-- Plant image -->
+ 
+@@ -45,19 +46,20 @@
+         android:layout_height="120dp"
+         android:layout_marginStart="74dp"
+         android:layout_toEndOf="@id/plantType"
++        android:contentDescription="@string/image_tanaman"
+         android:scaleType="centerCrop"
+         android:src="@drawable/plant" />
+ 
+     <Button
+         android:id="@+id/buttonDetail"
+-        android:layout_width="75dp"
+-        android:layout_height="30dp"
++        android:layout_width="80dp"
++        android:layout_height="40dp"
+         android:layout_below="@id/plantType"
+         android:layout_alignStart="@id/plantType"
+         android:layout_marginTop="8dp"
+         android:background="@drawable/button_rounded"
+-        android:text="Detail"
+-        android:textSize="10sp"
++        android:text="@string/detail"
++        android:textSize="11sp"
+         android:textColor="#FFFFFF" />
+ 
+ </RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_scan.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\".ui.scan.ScanFragment\">\n\n    <TextView\n        android:id=\"@+id/text_notifications\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginStart=\"8dp\"\n        android:layout_marginTop=\"8dp\"\n        android:layout_marginEnd=\"8dp\"\n        android:textAlignment=\"center\"\n        android:textSize=\"20sp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_scan.xml b/app/src/main/res/layout/fragment_scan.xml
+--- a/app/src/main/res/layout/fragment_scan.xml	(revision 6cde107affb54a3878e59c9ed9b4c5f2cbf2f5f4)
++++ b/app/src/main/res/layout/fragment_scan.xml	(date 1733062000966)
+@@ -2,21 +2,34 @@
+ <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/main"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context=".ui.scan.ScanFragment">
+ 
+-    <TextView
+-        android:id="@+id/text_notifications"
++    <androidx.camera.view.PreviewView
++        android:id="@+id/viewFinder"
+         android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:layout_marginStart="8dp"
+-        android:layout_marginTop="8dp"
+-        android:layout_marginEnd="8dp"
+-        android:textAlignment="center"
+-        android:textSize="20sp"
++        android:layout_height="match_parent" />
++
++    <ImageView
++        android:id="@+id/captureImage"
++        android:layout_width="60dp"
++        android:layout_height="60dp"
++        android:layout_marginBottom="16dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
++        app:srcCompat="@drawable/ic_capture" />
++
++    <ImageView
++        android:id="@+id/switchCamera"
++        android:layout_width="40dp"
++        android:layout_height="40dp"
++        android:layout_marginTop="16dp"
++        android:layout_marginEnd="16dp"
++        app:layout_constraintEnd_toEndOf="@+id/viewFinder"
++        app:layout_constraintTop_toTopOf="parent"
++        app:srcCompat="@drawable/ic_switch_camera" />
++
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:tools=\"http://schemas.android.com/tools\">\n\n    <uses-permission android:name=\"android.permission.INTERNET\" />\n\n    <application\n        android:allowBackup=\"true\"\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\n        android:fullBackupContent=\"@xml/backup_rules\"\n        android:icon=\"@mipmap/ic_launcher\"\n        android:label=\"@string/app_name\"\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/Theme.YukTanam\"\n        tools:targetApi=\"31\">\n        <activity\n            android:name=\".ui.register.RegisterActivity\"\n            android:exported=\"false\" />\n        <!-- Splash Screen sebagai aktivitas awal -->\n        <activity\n            android:name=\".ui.splashscreen.SplashScreenActivity\"\n            android:exported=\"true\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n        </activity> <!-- Main Activity -->\n        <activity\n            android:name=\".MainActivity\"\n            android:exported=\"true\" /> <!-- Login Activity -->\n        <activity\n            android:name=\".ui.login.LoginActivity\"\n            android:exported=\"false\" />\n    </application>\n\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 6cde107affb54a3878e59c9ed9b4c5f2cbf2f5f4)
++++ b/app/src/main/AndroidManifest.xml	(date 1733044918658)
+@@ -3,6 +3,9 @@
+     xmlns:tools="http://schemas.android.com/tools">
+ 
+     <uses-permission android:name="android.permission.INTERNET" />
++    <uses-permission android:name="android.permission.CAMERA" />
++    <uses-feature android:name="android.hardware.camera" android:required="true"/>
++
+ 
+     <application
+         android:allowBackup="true"
+@@ -33,6 +36,8 @@
+         <activity
+             android:name=".ui.login.LoginActivity"
+             android:exported="false" />
++        <activity android:name=".ui.scan.ScanResultActivity" />
++
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/java/com/example/yuktanam/ui/scan/ScanFragment.kt
+===================================================================
+diff --git a/app/src/main/java/com/example/yuktanam/ui/scan/ScanFragment.kt b/app/src/main/java/com/example/yuktanam/ui/scan/ScanFragment.kt
+deleted file mode 100644
+--- a/app/src/main/java/com/example/yuktanam/ui/scan/ScanFragment.kt	(revision 6cde107affb54a3878e59c9ed9b4c5f2cbf2f5f4)
++++ /dev/null	(revision 6cde107affb54a3878e59c9ed9b4c5f2cbf2f5f4)
+@@ -1,42 +0,0 @@
+-package com.example.yuktanam.ui.scan
+-
+-import android.os.Bundle
+-import android.view.LayoutInflater
+-import android.view.View
+-import android.view.ViewGroup
+-import android.widget.TextView
+-import androidx.fragment.app.Fragment
+-import androidx.lifecycle.ViewModelProvider
+-import com.example.yuktanam.databinding.FragmentScanBinding
+-
+-class ScanFragment : Fragment() {
+-
+-    private var _binding: FragmentScanBinding? = null
+-
+-    // This property is only valid between onCreateView and
+-    // onDestroyView.
+-    private val binding get() = _binding!!
+-
+-    override fun onCreateView(
+-        inflater: LayoutInflater,
+-        container: ViewGroup?,
+-        savedInstanceState: Bundle?
+-    ): View {
+-        val notificationsViewModel =
+-            ViewModelProvider(this).get(ScanViewModel::class.java)
+-
+-        _binding = FragmentScanBinding.inflate(inflater, container, false)
+-        val root: View = binding.root
+-
+-        val textView: TextView = binding.textNotifications
+-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+-            textView.text = it
+-        }
+-        return root
+-    }
+-
+-    override fun onDestroyView() {
+-        super.onDestroyView()
+-        _binding = null
+-    }
+-}
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project version=\"4\">\n  <component name=\"CodeInsightWorkspaceSettings\">\n    <option name=\"optimizeImportsOnTheFly\" value=\"true\" />\n  </component>\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"jbr-17\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\n  </component>\n  <component name=\"ProjectType\">\n    <option name=\"id\" value=\"Android\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 6cde107affb54a3878e59c9ed9b4c5f2cbf2f5f4)
++++ b/.idea/misc.xml	(date 1733061226327)
+@@ -3,7 +3,7 @@
+     <option name="optimizeImportsOnTheFly" value="true" />
+   </component>
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <bytecodeTargetLevel target=\"17\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 6cde107affb54a3878e59c9ed9b4c5f2cbf2f5f4)
++++ b/.idea/compiler.xml	(date 1732851977521)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="17" />
++    <bytecodeTargetLevel target="21" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"gradleJvm\" value=\"#GRADLE_LOCAL_JAVA_HOME\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n            <option value=\"$PROJECT_DIR$/app\" />\n          </set>\n        </option>\n        <option name=\"resolveExternalAnnotations\" value=\"false\" />\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision 6cde107affb54a3878e59c9ed9b4c5f2cbf2f5f4)
++++ b/.idea/gradle.xml	(date 1732963218482)
+@@ -4,6 +4,7 @@
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
++        <option name="testRunner" value="CHOOSE_PER_TEST" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+         <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+         <option name="modules">
+Index: app/src/main/res/layout/activity_scan_result.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_scan_result.xml b/app/src/main/res/layout/activity_scan_result.xml
+new file mode 100644
+--- /dev/null	(date 1733061695194)
++++ b/app/src/main/res/layout/activity_scan_result.xml	(date 1733061695194)
+@@ -0,0 +1,46 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="#F5F5F5">
++
++    <!-- Icon Back -->
++    <ImageView
++        android:id="@+id/backButton"
++        android:layout_width="32dp"
++        android:layout_height="32dp"
++        android:layout_margin="16dp"
++        android:contentDescription="Back Button"
++        android:src="@drawable/ic_back"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <!-- Gambar Hasil Scan -->
++    <ImageView
++        android:id="@+id/capturedImageView"
++        android:layout_width="240dp"
++        android:layout_height="360dp"
++        android:layout_margin="64dp"
++        android:contentDescription="Captured Image"
++        android:scaleType="centerInside"
++        app:layout_constraintBottom_toTopOf="@+id/resultTextView"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <!-- TextView untuk Menampilkan Hasil -->
++    <TextView
++        android:id="@+id/resultTextView"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="16dp"
++        android:text="Kondisi tanaman : Sehat"
++        android:textColor="#333333"
++        android:textSize="16sp"
++        android:textStyle="bold"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/capturedImageView"
++        app:layout_constraintEnd_toEndOf="parent" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+Index: gradle/libs.versions.toml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[versions]\nagp = \"8.6.1\"\ngoogleMaterial = \"1.12.0\"\ncircleimageview = \"3.1.0\"\ncoreSplashscreen = \"1.0.0\"\nglide = \"4.16.0\"\nimageslideshowVersion = \"0.1.0\"\nkotlin = \"1.9.0\"\ncoreKtx = \"1.15.0\"\njunit = \"4.13.2\"\njunitVersion = \"1.2.1\"\nespressoCore = \"3.6.1\"\nappcompat = \"1.7.0\"\nmaterial = \"1.12.0\"\nconstraintlayout = \"2.2.0\"\nlifecycleLivedataKtx = \"2.8.7\"\nlifecycleViewmodelKtx = \"2.8.7\"\nnavigationFragmentKtx = \"2.8.4\"\nnavigationUiKtx = \"2.8.4\"\nactivity = \"1.9.3\"\nrecyclerview = \"1.3.2\"\ndatastoreCoreAndroid = \"1.1.1\"\n\n[libraries]\nandroidx-core-ktx = { group = \"androidx.core\", name = \"core-ktx\", version.ref = \"coreKtx\" }\nandroidx-core-splashscreen = { module = \"androidx.core:core-splashscreen\", version.ref = \"coreSplashscreen\" }\nandroidx-recyclerview = { module = \"androidx.recyclerview:recyclerview\", version.ref = \"recyclerview\" }\ncircleimageview = { module = \"de.hdodenhof:circleimageview\", version.ref = \"circleimageview\" }\ndenzcoskun-imageslideshow = { module = \"com.github.denzcoskun:ImageSlideshow\", version.ref = \"imageslideshowVersion\" }\nglide = { module = \"com.github.bumptech.glide:glide\", version.ref = \"glide\" }\ngoogle-material-v190 = { module = \"com.google.android.material:material\", version.ref = \"googleMaterial\" }\njunit = { group = \"junit\", name = \"junit\", version.ref = \"junit\" }\nandroidx-junit = { group = \"androidx.test.ext\", name = \"junit\", version.ref = \"junitVersion\" }\nandroidx-espresso-core = { group = \"androidx.test.espresso\", name = \"espresso-core\", version.ref = \"espressoCore\" }\nandroidx-appcompat = { group = \"androidx.appcompat\", name = \"appcompat\", version.ref = \"appcompat\" }\nmaterial = { group = \"com.google.android.material\", name = \"material\", version.ref = \"material\" }\nandroidx-constraintlayout = { group = \"androidx.constraintlayout\", name = \"constraintlayout\", version.ref = \"constraintlayout\" }\nandroidx-lifecycle-livedata-ktx = { group = \"androidx.lifecycle\", name = \"lifecycle-livedata-ktx\", version.ref = \"lifecycleLivedataKtx\" }\nandroidx-lifecycle-viewmodel-ktx = { group = \"androidx.lifecycle\", name = \"lifecycle-viewmodel-ktx\", version.ref = \"lifecycleViewmodelKtx\" }\nandroidx-navigation-fragment-ktx = { group = \"androidx.navigation\", name = \"navigation-fragment-ktx\", version.ref = \"navigationFragmentKtx\" }\nandroidx-navigation-ui-ktx = { group = \"androidx.navigation\", name = \"navigation-ui-ktx\", version.ref = \"navigationUiKtx\" }\nandroidx-activity = { group = \"androidx.activity\", name = \"activity\", version.ref = \"activity\" }\nandroidx-datastore-core-android = { group = \"androidx.datastore\", name = \"datastore-core-android\", version.ref = \"datastoreCoreAndroid\" }\n\n[plugins]\nandroid-application = { id = \"com.android.application\", version.ref = \"agp\" }\nkotlin-android = { id = \"org.jetbrains.kotlin.android\", version.ref = \"kotlin\" }\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+--- a/gradle/libs.versions.toml	(revision 6cde107affb54a3878e59c9ed9b4c5f2cbf2f5f4)
++++ b/gradle/libs.versions.toml	(date 1733061873058)
+@@ -20,6 +20,8 @@
+ activity = "1.9.3"
+ recyclerview = "1.3.2"
+ datastoreCoreAndroid = "1.1.1"
++cameraCore = "1.4.0"
++cameraLifecycle = "1.4.0"
+ 
+ [libraries]
+ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+@@ -41,6 +43,8 @@
+ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+ androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+ androidx-datastore-core-android = { group = "androidx.datastore", name = "datastore-core-android", version.ref = "datastoreCoreAndroid" }
++androidx-camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "cameraCore" }
++androidx-camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "cameraLifecycle" }
+ 
+ [plugins]
+ android-application = { id = "com.android.application", version.ref = "agp" }
+Index: app/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\n    alias(libs.plugins.android.application)\n    alias(libs.plugins.kotlin.android)\n}\n\nandroid {\n    namespace = \"com.example.yuktanam\"\n    compileSdk = 35\n\n    defaultConfig {\n        applicationId = \"com.example.yuktanam\"\n        minSdk = 21\n        targetSdk = 35\n        versionCode = 1\n        versionName = \"1.0\"\n\n        testInstrumentationRunner = \"androidx.test.runner.AndroidJUnitRunner\"\n    }\n\n    buildTypes {\n        release {\n            isMinifyEnabled = false\n            proguardFiles(\n                getDefaultProguardFile(\"proguard-android-optimize.txt\"),\n                \"proguard-rules.pro\"\n            )\n        }\n    }\n    compileOptions {\n        sourceCompatibility = JavaVersion.VERSION_1_8\n        targetCompatibility = JavaVersion.VERSION_1_8\n    }\n    kotlinOptions {\n        jvmTarget = \"1.8\"\n    }\n    buildFeatures {\n        viewBinding = true\n    }\n}\n\ndependencies {\n\n    implementation(libs.androidx.core.ktx)\n    implementation(libs.androidx.appcompat)\n    implementation(libs.material)\n    implementation(libs.androidx.constraintlayout)\n    implementation(libs.androidx.lifecycle.livedata.ktx)\n    implementation(libs.androidx.lifecycle.viewmodel.ktx)\n    implementation(libs.androidx.navigation.fragment.ktx)\n    implementation(libs.androidx.navigation.ui.ktx)\n    implementation(libs.androidx.activity)\n    implementation(libs.androidx.datastore.core.android)\n    testImplementation(libs.junit)\n    androidTestImplementation(libs.androidx.junit)\n    androidTestImplementation(libs.androidx.espresso.core)\n    implementation(libs.google.material.v190)\n    implementation(libs.glide)\n    implementation(libs.circleimageview)\n    implementation(libs.androidx.core.splashscreen)\n\n    // RecyclerView\n    implementation(libs.androidx.recyclerview)\n\n    implementation(libs.material)\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+--- a/app/build.gradle.kts	(revision 6cde107affb54a3878e59c9ed9b4c5f2cbf2f5f4)
++++ b/app/build.gradle.kts	(date 1733061873090)
+@@ -50,6 +50,8 @@
+     implementation(libs.androidx.navigation.ui.ktx)
+     implementation(libs.androidx.activity)
+     implementation(libs.androidx.datastore.core.android)
++    implementation(libs.androidx.camera.core)
++    implementation(libs.androidx.camera.lifecycle)
+     testImplementation(libs.junit)
+     androidTestImplementation(libs.androidx.junit)
+     androidTestImplementation(libs.androidx.espresso.core)
+Index: app/src/main/java/com/example/yuktanam/ui/scan/ScanResultActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/yuktanam/ui/scan/ScanResultActivity.kt b/app/src/main/java/com/example/yuktanam/ui/scan/ScanResultActivity.kt
+new file mode 100644
+--- /dev/null	(date 1733057759875)
++++ b/app/src/main/java/com/example/yuktanam/ui/scan/ScanResultActivity.kt	(date 1733057759875)
+@@ -0,0 +1,39 @@
++package com.example.yuktanam.ui.scan
++
++import android.graphics.Bitmap
++import android.net.Uri
++import android.os.Bundle
++import android.widget.ImageView
++import android.widget.TextView
++import androidx.appcompat.app.AppCompatActivity
++import com.example.yuktanam.R
++
++class ScanResultActivity : AppCompatActivity() {
++
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_scan_result)
++
++        // Inisialisasi View
++        val capturedImageView: ImageView = findViewById(R.id.capturedImageView)
++        val resultTextView: TextView = findViewById(R.id.resultTextView)
++        val backButton: ImageView = findViewById(R.id.backButton)
++
++        // Menangkap data dari intent
++        val capturedImageUri = intent.getParcelableExtra<Uri>("capturedImageUri")
++        val scanResult = intent.getStringExtra("scanResult")
++
++        // Menampilkan gambar hasil scan
++        capturedImageUri?.let {
++            capturedImageView.setImageURI(it)
++        }
++
++        // Menampilkan hasil scan
++        resultTextView.text = "Kondisi tanaman: $scanResult"
++
++        // Tombol back untuk kembali
++        backButton.setOnClickListener {
++            onBackPressed()
++        }
++    }
++}

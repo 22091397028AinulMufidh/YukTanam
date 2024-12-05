@@ -1,0 +1,31 @@
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\n    <string name=\"app_name\">YukTanam</string>\n    <string name=\"logo\">Logo YukTanam</string>\n\n    <!--  Login  -->\n    <string name=\"login\">Masuk</string>\n    <string name=\"email_password\">Masukan alamat email dan password Anda untuk Masuk</string>\n    <string name=\"forget_password\">Lupa kata sandi?</string>\n    <string name=\"dont_have_account\">Tidak punya akun?</string>\n    <string name=\"logo_email\">Email</string>\n    <string name=\"logo_password\">Password</string>\n    <string name=\"email_hint\">Masukan alamat email kamu</string>\n    <string name=\"password_hint\">Masukan kata sandi kamu</string>\n    <string name=\"register\">Daftar</string>\n    <string name=\"any_login\">Masuk dengan</string>\n    <string name=\"logo_facebook\">Facebook</string>\n    <string name=\"logo_google\">Google</string>\n    <string name=\"logo_apple\">Apple</string>\n    <string name=\"error_email_is_not_valid\">Alamat Email tidak valid</string>\n    <string name=\"error_password_too_short\">Kata sandi setidaknya harus 8 karakter</string>\n\n    <!-- Register -->\n    <string name=\"person\">Nama</string>\n    <string name=\"title_register\">Isikan data terlebih dahulu dan pastikan sudah benar dan valid</string>\n    <string name=\"name_hint\">Masukan nama kamu</string>\n    <string name=\"have_account\">Sudah memiliki akun?</string>\n\n    <!-- Bottom Navigation   -->\n    <string name=\"title_home\">Beranda</string>\n    <string name=\"title_challenge\">Tantangan</string>\n    <string name=\"title_scan\">Deteksi</string>\n    <string name=\"title_favorite\">Favorit</string>\n    <string name=\"title_profile\">Profile</string>\n\n    <!-- Profile   -->\n    <string name=\"name_profile\">Ederson</string>\n    <string name=\"addres\">Surabaya, Jawa Timur</string>\n\n    <!-- Menu Setting Profile   -->\n    <string name=\"title_address\">Alamat</string>\n    <string name=\"title_language\">Bahasa</string>\n    <string name=\"title_dark_mode\">Mode Gelap</string>\n    <string name=\"title_schedule\">Jadwal</string>\n    <string name=\"title_help\">Bantuan</string>\n    <string name=\"title_privacy\">Kebijakan Privasi</string>\n    <string name=\"title_terms\">Kebijakan Penggunaan</string>\n\n    <!--  Home  -->\n    <string name=\"category\">Kategori</string>\n    <string name=\"see_all\">Lihat semua</string>\n    <string name=\"tropis\">Tropis</string>\n    <string name=\"sukulen\">Sukulen</string>\n    <string name=\"hias\">Hias</string>\n    <string name=\"myplant\">Tanaman Ku</string>\n\n    <!--  MY PLants  -->\n    <string name=\"leon\">Leon</string>\n    <string name=\"monstera\">Monstera</string>\n\n    <!--    Challenge Item-->\n    <string name=\"judul_misi\">Judul Misi</string>\n    <string name=\"deskripsi_misi\">Deskripsi Misi</string>\n    <string name=\"koin\">25</string>\n    <string name=\"coin_icon\">Icon Coin</string>\n    <string name=\"img_total_coin\">250</string>\n    <string name=\"total_koin\">Total Koin</string>\n\n<!--    Fragment Challenge-->\n    <string name=\"mission_icon\">Mission Icon</string>\n    <string name=\"total_mission_success\">3</string>\n    <string name=\"misi_selesai\">Misi Selesai</string>\n    <string name=\"exchange_icon\">Exchange Icon</string>\n    <string name=\"Reward\">Tukarkan koin dengan hadiah menarik</string>\n    <string name=\"exchange\">Tukarkan</string>\n    <string name=\"all_mission\">Semua Misi</string>\n\n\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision 6cde107affb54a3878e59c9ed9b4c5f2cbf2f5f4)
++++ b/app/src/main/res/values/strings.xml	(date 1732975669459)
+@@ -65,7 +65,7 @@
+     <string name="img_total_coin">250</string>
+     <string name="total_koin">Total Koin</string>
+ 
+-<!--    Fragment Challenge-->
++    <!--    Fragment Challenge-->
+     <string name="mission_icon">Mission Icon</string>
+     <string name="total_mission_success">3</string>
+     <string name="misi_selesai">Misi Selesai</string>
+@@ -74,5 +74,10 @@
+     <string name="exchange">Tukarkan</string>
+     <string name="all_mission">Semua Misi</string>
+ 
++    <!--    Favorite Item-->
++    <string name="detail">Detail</string>
++    <string name="image_tanaman">Image Tanaman</string>
++    <string name="icon_fav">icon_fav</string>
++
+ 
+ </resources>
+\ No newline at end of file

@@ -53,6 +53,8 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.datastore.core.android)
     implementation(libs.firebase.auth)
+    implementation(libs.googleid)
+    implementation(libs.firebase.messaging.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -77,6 +79,6 @@ dependencies {
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 
-    implementation(libs.play.services.auth)
+    implementation(libs.play.services.auth.api.phone)
 
 }

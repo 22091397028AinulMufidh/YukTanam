@@ -1,11 +1,16 @@
 [versions]
 agp = "8.6.1"
+androidxCredentials = "1.0.0"
 cameraCamera2 = "1.4.0"
+credentials = "1.3.0"
 exifinterface = "1.3.7"
 googleMaterial = "1.12.0"
 circleimageview = "3.1.0"
-coreSplashscreen = "1.0.0"
+coreSplashscreen = "1.0.1"
 glide = "4.16.0"
+googlePlayServicesAuth = "20.7.0"
+googlePlayServicesAuthVersion = "20.5.0"
+gradle = "8.1.1"
 imageslideshowVersion = "0.1.0"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
@@ -21,11 +26,15 @@ navigationFragmentKtx = "2.8.4"
 navigationUiKtx = "2.8.4"
 activity = "1.9.3"
 playServicesAuth = "21.2.0"
+playServicesAuthApiPhone = "18.1.0"
+playServicesAuthVersion = "20.5.0"
 recyclerview = "1.3.2"
 datastoreCoreAndroid = "1.1.1"
 roomRuntime = "2.6.1"
 googleGmsGoogleServices = "4.4.2"
 firebaseAuth = "23.1.0"
+googleid = "1.1.1"
+firebaseMessagingKtx = "24.1.0"
 
 [libraries]
 androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "cameraCamera2" }
@@ -33,8 +42,11 @@ androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", versi
 androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "cameraCamera2" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
+androidx-credentials-v100 = { module = "androidx.credentials:credentials", version = "1.3.0" }
 androidx-exifinterface = { module = "androidx.exifinterface:exifinterface", version.ref = "exifinterface" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleLivedataKtx" }
+androidx-play-services-auth = { module = "androidx.credentials:play-services-auth", version.ref = "playServicesAuthVersion" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
@@ -43,6 +55,7 @@ circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circ
 denzcoskun-imageslideshow = { module = "com.github.denzcoskun:ImageSlideshow", version.ref = "imageslideshowVersion" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 google-material-v190 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -57,6 +70,11 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-datastore-core-android = { group = "androidx.datastore", name = "datastore-core-android", version.ref = "datastoreCoreAndroid" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+play-services-auth-api-phone = { module = "com.google.android.gms:play-services-auth-api-phone", version.ref = "playServicesAuthApiPhone" }
+googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "googleid" }
+play-services-auth-v2050 = { module = "com.google.android.gms:play-services-auth", version.ref = "googlePlayServicesAuthVersion" }
+play-services-auth-v2070 = { module = "com.google.android.gms:play-services-auth", version.ref = "googlePlayServicesAuth" }
+firebase-messaging-ktx = { group = "com.google.firebase", name = "firebase-messaging-ktx", version.ref = "firebaseMessagingKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

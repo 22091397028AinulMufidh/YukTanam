@@ -215,7 +215,7 @@
 
         <!--  LOGO FACEBOOK  -->
         <LinearLayout
-            android:id="@+id/logo_facebook"
+            android:id="@+id/btnFacebook"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="20dp"
@@ -233,7 +233,7 @@
 
         <!--  LOGO GOOGLE  -->
         <LinearLayout
-            android:id="@+id/logo_google"
+            android:id="@+id/btnGoogle"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:gravity="center"
@@ -250,7 +250,7 @@
 
         <!--  LOGO APPLE  -->
         <LinearLayout
-            android:id="@+id/logo_apple"
+            android:id="@+id/btnApple"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:gravity="center"

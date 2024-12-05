@@ -1,0 +1,155 @@
+Index: app/src/main/java/com/example/yuktanam/ui/scan/ScanFragment.kt
+===================================================================
+diff --git a/app/src/main/java/com/example/yuktanam/ui/scan/ScanFragment.kt b/app/src/main/java/com/example/yuktanam/ui/scan/ScanFragment.kt
+deleted file mode 100644
+--- a/app/src/main/java/com/example/yuktanam/ui/scan/ScanFragment.kt	(revision fe0917c98eaa340c0d4a2a0ac4fe4f1907f206db)
++++ /dev/null	(revision fe0917c98eaa340c0d4a2a0ac4fe4f1907f206db)
+@@ -1,42 +0,0 @@
+-package com.example.yuktanam.ui.scan
+-
+-import android.os.Bundle
+-import android.view.LayoutInflater
+-import android.view.View
+-import android.view.ViewGroup
+-import android.widget.TextView
+-import androidx.fragment.app.Fragment
+-import androidx.lifecycle.ViewModelProvider
+-import com.example.yuktanam.databinding.FragmentScanBinding
+-
+-class ScanFragment : Fragment() {
+-
+-    private var _binding: FragmentScanBinding? = null
+-
+-    // This property is only valid between onCreateView and
+-    // onDestroyView.
+-    private val binding get() = _binding!!
+-
+-    override fun onCreateView(
+-        inflater: LayoutInflater,
+-        container: ViewGroup?,
+-        savedInstanceState: Bundle?
+-    ): View {
+-        val notificationsViewModel =
+-            ViewModelProvider(this).get(ScanViewModel::class.java)
+-
+-        _binding = FragmentScanBinding.inflate(inflater, container, false)
+-        val root: View = binding.root
+-
+-        val textView: TextView = binding.textNotifications
+-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+-            textView.text = it
+-        }
+-        return root
+-    }
+-
+-    override fun onDestroyView() {
+-        super.onDestroyView()
+-        _binding = null
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_scan_result.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_scan_result.xml b/app/src/main/res/layout/activity_scan_result.xml
+new file mode 100644
+--- /dev/null	(date 1733062155065)
++++ b/app/src/main/res/layout/activity_scan_result.xml	(date 1733062155065)
+@@ -0,0 +1,46 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="#F5F5F5">
++
++    <!-- Icon Back -->
++    <ImageView
++        android:id="@+id/backButton"
++        android:layout_width="32dp"
++        android:layout_height="32dp"
++        android:layout_margin="16dp"
++        android:contentDescription="Back Button"
++        android:src="@drawable/ic_back"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <!-- Gambar Hasil Scan -->
++    <ImageView
++        android:id="@+id/capturedImageView"
++        android:layout_width="240dp"
++        android:layout_height="360dp"
++        android:layout_margin="64dp"
++        android:contentDescription="Captured Image"
++        android:scaleType="centerInside"
++        app:layout_constraintBottom_toTopOf="@+id/resultTextView"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <!-- TextView untuk Menampilkan Hasil -->
++    <TextView
++        android:id="@+id/resultTextView"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="16dp"
++        android:text="Kondisi tanaman : Sehat"
++        android:textColor="#333333"
++        android:textSize="16sp"
++        android:textStyle="bold"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@id/capturedImageView"
++        app:layout_constraintEnd_toEndOf="parent" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+Index: app/src/main/java/com/example/yuktanam/ui/scan/ScanResultActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/yuktanam/ui/scan/ScanResultActivity.kt b/app/src/main/java/com/example/yuktanam/ui/scan/ScanResultActivity.kt
+new file mode 100644
+--- /dev/null	(date 1733062155083)
++++ b/app/src/main/java/com/example/yuktanam/ui/scan/ScanResultActivity.kt	(date 1733062155083)
+@@ -0,0 +1,39 @@
++package com.example.yuktanam.ui.scan
++
++import android.graphics.Bitmap
++import android.net.Uri
++import android.os.Bundle
++import android.widget.ImageView
++import android.widget.TextView
++import androidx.appcompat.app.AppCompatActivity
++import com.example.yuktanam.R
++
++class ScanResultActivity : AppCompatActivity() {
++
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_scan_result)
++
++        // Inisialisasi View
++        val capturedImageView: ImageView = findViewById(R.id.capturedImageView)
++        val resultTextView: TextView = findViewById(R.id.resultTextView)
++        val backButton: ImageView = findViewById(R.id.backButton)
++
++        // Menangkap data dari intent
++        val capturedImageUri = intent.getParcelableExtra<Uri>("capturedImageUri")
++        val scanResult = intent.getStringExtra("scanResult")
++
++        // Menampilkan gambar hasil scan
++        capturedImageUri?.let {
++            capturedImageView.setImageURI(it)
++        }
++
++        // Menampilkan hasil scan
++        resultTextView.text = "Kondisi tanaman: $scanResult"
++
++        // Tombol back untuk kembali
++        backButton.setOnClickListener {
++            onBackPressed()
++        }
++    }
++}

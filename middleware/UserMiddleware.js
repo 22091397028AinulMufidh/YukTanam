@@ -29,6 +29,7 @@ exports.authMiddleware = async (req, res, next) => {
   try {
     decoded = await jwt.verify(token, process.env.JWT_SECRET);
   } catch (error) {
+    console.error("JWT verification failed:", error);
     return next(
       res.status(401).json({
         error: error,

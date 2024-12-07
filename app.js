@@ -8,8 +8,8 @@ const plantRoutes = require("./routing/PlantRouter");
 const AuthRouter = require("./routing/AuthRouter");
 const GamificationRouter = require("./routing/GamificationRouter");
 const { errorHandler, notFound } = require("./middleware/errorMiddleware");
-const notificationScheduler = require('./scheduler/notificationScheduler');
-const path = require('path')
+const notificationScheduler = require("./scheduler/notificationScheduler");
+const path = require("path");
 
 dotenv.config();
 
@@ -20,7 +20,10 @@ app.use(cookieParse());
 
 app.use(morgan("dev"));
 app.use(cors());
-app.use('/public/uploads', express.static(path.join(__dirname + '/public/uploads')))
+app.use(
+  "/public/uploads",
+  express.static(path.join(__dirname + "/public/uploads"))
+);
 
 //Routing
 app.use("/api/v1/auth", AuthRouter);

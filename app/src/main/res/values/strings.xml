@@ -86,5 +86,8 @@
     <string name="exchange">Tukarkan</string>
     <string name="all_mission">Semua Misi</string>
 
+    <!--  API KEY GEMINI AI  -->
+    <string name="api_key">AIzaSyCFxratx_6J2Tnn3LwoWFA-1_ct6wl7uJE"</string>
+    <string name="title_activity_chatbot">ChatbotActivity</string>
 
 </resources>

@@ -17,6 +17,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
@@ -37,6 +40,15 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.1"
+    }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 
@@ -53,6 +65,12 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.datastore.core.android)
     implementation(libs.firebase.auth)
+    implementation(libs.googleid)
+    implementation(libs.firebase.messaging.ktx)
+    implementation(libs.androidx.material3.android)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -73,10 +91,30 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
     implementation(libs.androidx.room.runtime)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
     //noinspection KaptUsageInsteadOfKsp
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 
-    implementation(libs.play.services.auth)
+    implementation(libs.play.services.auth.api.phone)
+
+    // Compose
+    implementation(libs.androidx.material)
+    implementation(libs.androidx.ui.tooling)
+    implementation(libs.androidx.lifecycle.runtime.ktx.v262)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.ui.tooling.preview)
+    implementation(libs.androidx.ui.v150)
+    implementation(libs.androidx.compose.foundation.foundation2)
+    implementation(libs.androidx.material)
+
+    // API KEY GEMINI
+    implementation(libs.generativeai)
+
+    // Lottie Animastion
+    implementation(libs.lottie.compose)
 
 }

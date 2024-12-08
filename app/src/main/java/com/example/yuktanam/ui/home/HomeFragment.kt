@@ -22,6 +22,7 @@ import com.example.yuktanam.logic.home.recyclerview.PlantAdapter
 import com.example.yuktanam.logic.slider.ImageAdapter
 import com.example.yuktanam.logic.slider.ImageItem
 import com.example.yuktanam.ui.addplants.AddPlantActivity
+import com.example.yuktanam.ui.chatbot.ChatbotActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -60,8 +61,17 @@ class HomeFragment : Fragment() {
         setupViewPager()
         setupRecyclerView()
         buttonAddPlants()
+        chatbotAI()
 
         return binding.root
+    }
+
+    private fun chatbotAI() {
+        val fabChatbot = binding.fabChatbot
+        fabChatbot.setOnClickListener {
+            val intent = Intent(requireContext(), ChatbotActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun buttonAddPlants() {

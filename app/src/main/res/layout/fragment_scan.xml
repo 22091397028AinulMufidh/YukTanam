@@ -1,16 +1,14 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+    android:layout_height="match_parent">
 
     <!-- Judul -->
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:text="Scan"
         android:textColor="#000000"
         android:textSize="20sp"
@@ -24,17 +22,17 @@
         android:layout_below="@id/titleText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:scaleType="fitCenter"
         android:background="@drawable/placeholder_rounded"
-        android:contentDescription="Gambar tanaman hasil scan" />
+        android:contentDescription="Gambar tanaman hasil scan"
+        android:scaleType="fitCenter" />
 
     <!-- Tombol Bawah -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:padding="16dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <!-- Tombol Upload -->
         <FrameLayout
@@ -47,20 +45,23 @@
 
             <ImageButton
                 android:id="@+id/uploadImageButton"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_upload"
-                android:contentDescription="Unggah gambar" />
+                android:contentDescription="Unggah gambar"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_upload" />
         </FrameLayout>
 
-        <!-- Spacer (untuk memberi jarak tombol kiri ke tengah) -->
+
         <View
             android:layout_width="0dp"
             android:layout_height="64dp"
             android:layout_weight="1" />
 
-        <!-- Tombol Scan -->
+
         <FrameLayout
             android:id="@+id/scanContainer"
             android:layout_width="64dp"
@@ -70,14 +71,17 @@
 
             <ImageButton
                 android:id="@+id/scanImageButton"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_scan"
-                android:contentDescription="Mulai scan" />
+                android:contentDescription="Mulai scan"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_scan" />
         </FrameLayout>
 
-        <!-- Spacer (untuk memberi jarak tombol tengah ke kanan) -->
+
         <View
             android:layout_width="0dp"
             android:layout_height="64dp"
@@ -94,11 +98,14 @@
 
             <ImageButton
                 android:id="@+id/cameraImageButton"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_camera"
-                android:contentDescription="Buka kamera" />
+                android:contentDescription="Buka kamera"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_camera" />
         </FrameLayout>
     </LinearLayout>
 </RelativeLayout>

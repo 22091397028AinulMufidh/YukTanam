@@ -71,10 +71,10 @@
     <!--    Challenge Item-->
     <string name="judul_misi">Judul Misi</string>
     <string name="deskripsi_misi">Deskripsi Misi</string>
-    <string name="koin">25</string>
-    <string name="coin_icon">Icon Coin</string>
-    <string name="img_total_coin">250</string>
-    <string name="total_koin">Total Koin</string>
+    <string name="xp">25</string>
+    <string name="xp_icon">Icon XP</string>
+    <string name="img_total_xp">250</string>
+    <string name="total_xp">Total XP</string>
 
     <!--    Fragment Challenge-->
     <string name="mission_icon">Mission Icon</string>

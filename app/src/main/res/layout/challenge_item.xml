@@ -65,15 +65,15 @@
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:layout_marginEnd="4dp"
-                android:src="@drawable/koin"
-                android:contentDescription="@string/coin_icon" />
+                android:src="@drawable/xp"
+                android:contentDescription="@string/xp_icon" />
 
             <!-- Angka Koin -->
             <TextView
                 android:id="@+id/tv_challenge_reward"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/koin"
+                android:text="@string/xp"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="@color/black" />

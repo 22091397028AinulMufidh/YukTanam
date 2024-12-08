@@ -52,6 +52,19 @@ class MainActivity : AppCompatActivity() {
         )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.navigation_scan -> {
+                    // Hide BottomNavigationView when entering the scan fragment
+                    navView.visibility = BottomNavigationView.GONE
+                }
+                else -> {
+                    // Show BottomNavigationView for other fragments
+                    navView.visibility = BottomNavigationView.VISIBLE
+                }
+            }
+        }
     }
 
 }

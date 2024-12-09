@@ -23,6 +23,8 @@ module.exports = {
           email: "admin@mail.com",
           password: bcrypt.hashSync("12345678", salt),
           role_id: adminId,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       {}

@@ -17,11 +17,34 @@ class ScanFragment : Fragment(R.layout.fragment_scan) {
 
     private lateinit var binding: FragmentScanBinding
     private var capturedImageUri: Uri? = null
+    private lateinit var predictionHelper: PredictionHelper
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentScanBinding.bind(view)
+
+        binding.scanContainer.isEnabled = false
+
+        predictionHelper = PredictionHelper(
+            context = requireContext(),
+            onResult = { result ->
+//                binding.tvResult.text = result
+            },
+            onError = { errorMessage ->
+                // Show error message using Toast
+                Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
+            },
+            onDownloadSuccess = {
+                // Enable the scan container after download success
+                binding.scanContainer.isEnabled = true
+            }
+        )
+
+//        binding.scanContainer.setOnClickListener {
+//            val input = binding.edSales.text.toString()
+//            predictionHelper.predict(input)
+//        }
 
         // Tombol Upload (Kiri): Buka galeri untuk memilih gambar
         binding.uploadImageButton.setOnClickListener {

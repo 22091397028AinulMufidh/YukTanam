@@ -7,7 +7,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     const salt = await bcrypt.genSaltSync(10);
     const adminId = await queryInterface.rawSelect(
-      "roles",
+      "Roles",
       {
         where: { name: "admin" },
       },
@@ -15,7 +15,7 @@ module.exports = {
     );
 
     await queryInterface.bulkInsert(
-      "users",
+      "Users",
       [
         {
           id: v4(),
@@ -30,6 +30,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("users", null, {});
+    await queryInterface.bulkDelete("Users", null, {});
   },
 };

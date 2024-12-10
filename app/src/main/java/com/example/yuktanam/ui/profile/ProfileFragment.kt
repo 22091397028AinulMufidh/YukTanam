@@ -66,7 +66,6 @@ class ProfileFragment : Fragment() {
                 startActivity(Intent(requireActivity(), LoginActivity::class.java))
                 requireActivity().finish()
             } catch (e: Exception) {
-                // Tangani error jika ada
                 e.printStackTrace()
             }
         }

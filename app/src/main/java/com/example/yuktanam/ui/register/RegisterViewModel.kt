@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.yuktanam.logic.data.api.ApiConfig
-import com.example.yuktanam.logic.data.model.RegisterRequest
+import com.example.yuktanam.logic.data.request.RegisterRequest
 import com.example.yuktanam.logic.data.response.RegisterResponse
 import com.example.yuktanam.ui.login.LoginActivity
 import kotlinx.coroutines.launch

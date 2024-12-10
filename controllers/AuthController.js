@@ -102,6 +102,9 @@ exports.getMyUser = async (req, res) => {
       name: currentUser.name,
       email: currentUser.email,
       role_id: currentUser.role_id,
+      points: currentUser.points,
+      title: currentUser.title,
+      last_check_in: currentUser.last_check_in,
     });
   }
 

@@ -127,4 +127,10 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.ml.modeldownloader)
 
+    // Retrofit dependency
+    implementation(libs.retrofit)
+    // Gson Converter for Retrofit
+    implementation(libs.converter.gson)
+    // Gson dependency
+    implementation(libs.gson)
 }

@@ -1,3 +1,4 @@
+const asyncHandle = require("../middleware/asyncHandle");
 const { Tasks } = require("../models");
 const { User } = require("../models");
 
@@ -102,6 +103,23 @@ exports.dailyCheckIn = async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({
+      status: "Fail",
+      error: "Server Down",
+    });
+  }
+};
+
+//get all tasks
+exports.getAllTasks = async (req, res) => {
+  try {
+    const tasks = await Tasks.findAll();
+
+    return res.status(200).json({
+      status: "Success",
+      data: tasks,
+    });
+  } catch (error) {
+    return res.status(500).json({
       status: "Fail",
       error: "Server Down",
     });

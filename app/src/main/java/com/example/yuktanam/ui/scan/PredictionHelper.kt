@@ -2,7 +2,10 @@ package com.example.yuktanam.ui.scan
 
 import android.content.Context
 import android.content.res.AssetManager
+import android.graphics.Bitmap
+import android.graphics.Color
 import android.util.Log
+import android.widget.Toast
 import com.example.yuktanam.R
 import com.google.android.gms.tflite.client.TfLiteInitializationOptions
 import com.google.android.gms.tflite.gpu.support.TfLiteGpu
@@ -24,7 +27,7 @@ class PredictionHelper(
     val context: Context,
     private val onResult: (String) -> Unit,
     private val onError: (String) -> Unit,
-    private val onDownloadSuccess: () -> Unit,
+    private val onDownloadSuccess: (String) -> Unit,
 ) {
 
     private var interpreter: InterpreterApi? = null
@@ -61,52 +64,87 @@ class PredictionHelper(
                     model?.file?.let { modelFile ->
                         try {
                             initializeInterpreter(modelFile)
-                            onDownloadSuccess()
+                            val successMessage = context.getString(R.string.download_success)
+                            onDownloadSuccess(successMessage)
+                            Toast.makeText(context, successMessage, Toast.LENGTH_SHORT).show()
                         } catch (e: IOException) {
-                            onError("Failed to initialize TensorFlow Lite Interpreter: ${e.message}")
+                            val errorMessage = "Failed to initialize TensorFlow Lite Interpreter: ${e.message}"
+                            onError(errorMessage)
+                            Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
                         }
                     } ?: run {
-                        onError(context.getString(R.string.firebaseml_model_download_failed))
+                        val errorMessage = context.getString(R.string.firebaseml_model_download_failed)
+                        onError(errorMessage)
+                        Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    onError(context.getString(R.string.firebaseml_model_download_failed))
+                    val errorMessage = context.getString(R.string.firebaseml_model_download_failed)
+                    onError(errorMessage)
+                    Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener { e ->
-                onError("Model download failed: ${e.message}")
+                val errorMessage = "Model download failed: ${e.message}"
+                onError(errorMessage)
+                Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
             }
     }
+
 
     private fun initializeInterpreter(modelFile: File) {
         interpreter?.close() // Tutup interpreter sebelumnya jika ada
         try {
             val options = InterpreterApi.Options()
-                .setRuntime(InterpreterApi.Options.TfLiteRuntime.FROM_SYSTEM_ONLY)
-                .addDelegateFactory(GpuDelegateFactory())
+            if (TfLiteGpu.isGpuDelegateAvailable(context).result) {
+                options.addDelegateFactory(GpuDelegateFactory())
+            }
+            options.setRuntime(InterpreterApi.Options.TfLiteRuntime.FROM_SYSTEM_ONLY)
 
             interpreter = InterpreterApi.create(modelFile, options)
         } catch (e: Exception) {
             onError("Error initializing interpreter: ${e.message}")
+            Toast.makeText(context, "Error initializing interpreter: ${e.message}", Toast.LENGTH_SHORT).show()
             Log.e(TAG, e.message.toString())
         }
     }
 
-    fun predict(inputString: String) {
+
+    fun predict(image: Bitmap, callback: (String) -> Unit) {
         if (interpreter == null) {
             onError(context.getString(R.string.no_tflite_interpreter_loaded))
             return
         }
-        val inputArray = FloatArray(1)
-        inputArray[0] = inputString.toFloat()
-        val outputArray = Array(1) { FloatArray(1) }
         try {
+            val inputArray = preprocessImage(image)
+            val outputArray = Array(1) { FloatArray(1) }
             interpreter?.run(inputArray, outputArray)
-            onResult(outputArray[0][0].toString())
+            val result = if (outputArray[0][0] > 0.5) "Healthy" else "Unhealthy"
+            callback(result)
         } catch (e: Exception) {
             onError(context.getString(R.string.error_during_prediction))
-            Log.e(TAG, e.message.toString())
         }
     }
+
+
+    private fun preprocessImage(image: Bitmap): Array<Array<Array<FloatArray>>> {
+        // Ubah ukuran gambar menjadi dimensi input model (misalnya, 224x224)
+        val resizedImage = Bitmap.createScaledBitmap(image, 224, 224, true)
+
+        // Normalisasi piksel gambar (0-255 menjadi 0-1)
+        val inputArray = Array(1) {
+            Array(224) { Array(224) { FloatArray(3) } }
+        }
+        for (x in 0 until 224) {
+            for (y in 0 until 224) {
+                val pixel = resizedImage.getPixel(x, y)
+                inputArray[0][x][y][0] = (Color.red(pixel) / 255.0f)
+                inputArray[0][x][y][1] = (Color.green(pixel) / 255.0f)
+                inputArray[0][x][y][2] = (Color.blue(pixel) / 255.0f)
+            }
+        }
+        return inputArray
+    }
+
 
     private fun loadModelFile(assetManager: AssetManager, modelPath: String): MappedByteBuffer {
         assetManager.openFd(modelPath).use { fileDescriptor ->
@@ -118,6 +156,7 @@ class PredictionHelper(
             }
         }
     }
+
 
     companion object {
         private const val TAG = "PredictionHelper"

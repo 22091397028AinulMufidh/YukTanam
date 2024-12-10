@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const multer = require("multer");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const morgan = require("morgan");
@@ -7,6 +8,7 @@ const cookieParse = require("cookie-parser");
 const plantRoutes = require("./routing/PlantRouter");
 const AuthRouter = require("./routing/AuthRouter");
 const GamificationRouter = require("./routing/GamificationRouter");
+const ScanRouter = require("./routing/ScanRouter");
 const { errorHandler, notFound } = require("./middleware/errorMiddleware");
 const notificationScheduler = require('./scheduler/notificationScheduler');
 const path = require('path')
@@ -26,6 +28,7 @@ app.use('/public/uploads', express.static(path.join(__dirname + '/public/uploads
 app.use("/api/v1/auth", AuthRouter);
 app.use("/api/v1/gamification", GamificationRouter);
 app.use("/api/v1/plants", plantRoutes);
+app.use("/api/v1/scan", ScanRouter);
 
 app.use(notFound);
 app.use(errorHandler);

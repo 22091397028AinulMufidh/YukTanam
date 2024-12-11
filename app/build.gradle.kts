@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
+    id("kotlin-parcelize")
     alias(libs.plugins.google.gms.google.services)
 }
 
@@ -76,6 +77,7 @@ dependencies {
     testImplementation(libs.androidx.ui.test.junit4.android)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.camera.core)
     implementation(libs.google.material.v190)
     implementation(libs.glide)
     implementation(libs.circleimageview)
@@ -133,4 +135,9 @@ dependencies {
     implementation(libs.converter.gson)
     // Gson dependency
     implementation(libs.gson)
+
+    // Glide
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+
 }

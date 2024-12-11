@@ -32,7 +32,7 @@
 
         <!-- Heart Icon -->
         <ImageView
-            android:id="@+id/favorite_plant"
+            android:id="@+id/heartIcon_1"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_favorite"
@@ -56,7 +56,7 @@
 
         <!-- Plant Image -->
         <ImageView
-            android:id="@+id/image_plant"
+            android:id="@+id/image_plant_1"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_marginTop="10dp"
@@ -93,7 +93,7 @@
 
         <!-- Heart Icon -->
         <ImageView
-            android:id="@+id/favorite_plant2"
+            android:id="@+id/heartIcon_2"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_favorite"
@@ -117,7 +117,7 @@
 
         <!-- Plant Image -->
         <ImageView
-            android:id="@+id/image_plant2"
+            android:id="@+id/image_plant_2"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_marginTop="10dp"

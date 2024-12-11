@@ -12,7 +12,7 @@ import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import com.example.yuktanam.R
 import com.example.yuktanam.databinding.FragmentScanBinding
-import com.example.yuktanam.ui.addplants.CameraActivity
+import com.example.yuktanam.ui.plants.CameraActivity
 
 class ScanFragment : Fragment(R.layout.fragment_scan) {
 

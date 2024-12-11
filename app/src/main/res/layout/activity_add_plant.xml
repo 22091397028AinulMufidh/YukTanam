@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".ui.addplants.AddPlantActivity">
+    tools:context=".ui.plants.addplants.AddPlantActivity">
 
     <!-- BUTTON BACK  -->
     <LinearLayout
@@ -204,7 +204,7 @@
 
     </LinearLayout>
 
-    <!-- Button Login -->
+    <!-- Button Tambahkan -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAddPlants"
         android:layout_width="match_parent"
@@ -222,4 +222,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/form_add_plants" />
+
+    <!-- ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

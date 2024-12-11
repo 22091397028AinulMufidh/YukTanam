@@ -12,11 +12,19 @@ object ApiConfig {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create()) // Menambahkan GsonConverterFactory
-            .client(OkHttpClient()) // Jika perlu menggunakan OkHttp client
+            .client(getOkHttpClient()) // Menambahkan OkHttp client
             .build()
     }
 
     val apiService: ApiService by lazy {
         retrofit.create(ApiService::class.java)
     }
+
+    // Konfigurasi OkHttpClient jika dibutuhkan untuk pengaturan khusus seperti interceptor, timeout, dll
+    private fun getOkHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder().apply {
+            // Anda bisa menambahkan konfigurasi seperti interceptor atau logging jika diperlukan
+        }.build()
+    }
 }
+

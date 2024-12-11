@@ -1,4 +1,4 @@
-package com.example.yuktanam.ui.addplants
+package com.example.yuktanam.ui.plants
 
 import android.content.Intent
 import android.os.Build
@@ -21,7 +21,7 @@ import com.example.yuktanam.databinding.ActivityCameraBinding
 class CameraActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCameraBinding
     private var cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-    private var imageCapture: ImageCapture? = null
+    var imageCapture: ImageCapture? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +44,7 @@ class CameraActivity : AppCompatActivity() {
         startCamera()
     }
 
-    private fun startCamera() {
+     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 
         cameraProviderFuture.addListener({
@@ -52,7 +52,7 @@ class CameraActivity : AppCompatActivity() {
             val preview = Preview.Builder()
                 .build()
                 .also {
-                    it.setSurfaceProvider(binding.viewFinder.surfaceProvider)
+                    it.surfaceProvider = binding.viewFinder.surfaceProvider
                 }
 
             imageCapture = ImageCapture.Builder().build()
@@ -77,7 +77,7 @@ class CameraActivity : AppCompatActivity() {
         }, ContextCompat.getMainExecutor(this))
     }
 
-    private fun takePhoto() {
+     private fun takePhoto() {
         val imageCapture = imageCapture ?: return
 
         val photoFile = createCustomTempFile(application)

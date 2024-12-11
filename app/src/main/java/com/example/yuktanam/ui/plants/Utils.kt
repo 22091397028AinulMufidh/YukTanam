@@ -1,4 +1,4 @@
-package com.example.yuktanam.ui.addplants
+package com.example.yuktanam.ui.plants
 
 import android.content.ContentValues
 import android.content.Context

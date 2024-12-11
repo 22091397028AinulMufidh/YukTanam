@@ -9,23 +9,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.example.yuktanam.R
 import com.example.yuktanam.databinding.FragmentHomeBinding
 import com.example.yuktanam.logic.database.addplant.PlantDatabase
-import com.example.yuktanam.logic.database.addplant.PlantEntity
-import com.example.yuktanam.logic.home.recyclerview.Plant
 import com.example.yuktanam.logic.home.recyclerview.PlantAdapter
 import com.example.yuktanam.logic.slider.ImageAdapter
 import com.example.yuktanam.logic.slider.ImageItem
-import com.example.yuktanam.ui.addplants.AddPlantActivity
 import com.example.yuktanam.ui.chatbot.ChatbotActivity
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.example.yuktanam.ui.plants.addplants.AddPlantActivity
+import com.example.yuktanam.ui.plants.getplants.GetPlantViewModel
 import java.util.UUID
 
 class HomeFragment : Fragment() {
@@ -38,6 +33,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var adapter: PlantAdapter
     private lateinit var database: PlantDatabase
+    private lateinit var viewModel: GetPlantViewModel
 
     private val params = LinearLayout.LayoutParams(
         LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -58,10 +54,15 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         database = PlantDatabase.getDatabase(requireContext()) // Inisialisasi database
 
+        // Inisialisasi ViewModel untuk API
+        viewModel = ViewModelProvider(this).get(GetPlantViewModel::class.java)
+
         setupViewPager()
-        setupRecyclerView()
+//        setupRecyclerView()
         buttonAddPlants()
         chatbotAI()
+
+//        observeViewModel()
 
         return binding.root
     }
@@ -135,56 +136,68 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun setupRecyclerView() {
-        val plantList = listOf(
-            Plant(UUID.randomUUID().toString(), "Leon", "Monstera", R.drawable.sukulen, false),
-            Plant(UUID.randomUUID().toString(), "Frisly", "Africa", R.drawable.tropical, false),
-            Plant(UUID.randomUUID().toString(), "Gojo", "Monstera", R.drawable.sukulen, false),
-            Plant(UUID.randomUUID().toString(), "Deona", "Africa", R.drawable.tropical, false)
-        )
+//    private fun setupRecyclerView() {
+//        binding.recyclerView.layoutManager =
+//            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+//
+//        adapter = PlantAdapter(emptyList()) { plant, position ->
+//            plant.isFavorite = !plant.isFavorite
+//            adapter.notifyItemChanged(position)
+//
+//            CoroutineScope(Dispatchers.IO).launch {
+//                val plantDao = database.plantDao()
+//                if (plant.isFavorite) {
+//                    plantDao.insertFavorite(
+//                        PlantEntity(
+//                            id = plant.id,
+//                            name = plant.name,
+//                            origin = plant.origin,
+//                            imageResource = plant.imageResource,
+//                            isFavorite = plant.isFavorite
+//                        )
+//                    )
+//                } else {
+//                    plantDao.deleteFavorite(
+//                        PlantEntity(
+//                            id = plant.id,
+//                            name = plant.name,
+//                            origin = plant.origin,
+//                            imageResource = plant.imageResource,
+//                            isFavorite = plant.isFavorite
+//                        )
+//                    )
+//                }
+//            }
+//
+//            Toast.makeText(
+//                requireContext(),
+//                if (plant.isFavorite) "${plant.name} added to favorites!" else "${plant.name} removed from favorites!",
+//                Toast.LENGTH_SHORT
+//            ).show()
+//        }
+//        binding.recyclerView.adapter = adapter
+//    }
+//
+//    private fun observeViewModel() {
+//        viewModel.plants.observe(viewLifecycleOwner) { plants ->
+//            adapter.updateData(plants.map {
+//                Plant(
+//                    id = it.id ?: "",
+//                    name = it.namaPanggilanTanaman ?: "Unknown",
+//                    origin = it.jenisTanaman ?: "Unknown",
+//                    imageResource = R.drawable.ic_image, // Replace with actual image handling
+//                    isFavorite = false // Set initial favorite state
+//                )
+//            })
+//        }
+//
+//        viewModel.errorMessage.observe(viewLifecycleOwner) { error ->
+//            Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
+//        }
+//
+//        viewModel.fetchPlants()
+//    }
 
-        adapter = PlantAdapter(plantList) { plant, position ->
-            plant.isFavorite = !plant.isFavorite
-            adapter.notifyItemChanged(position)
-
-            CoroutineScope(Dispatchers.IO).launch {
-                val plantDao = database.plantDao()
-                if (plant.isFavorite) {
-                    plantDao.insertFavorite(
-                        PlantEntity(
-                            id = plant.id,
-                            name = plant.name,
-                            origin = plant.origin,
-                            imageResource = plant.imageResource,
-                            isFavorite = plant.isFavorite
-                        )
-                    )
-                } else {
-                    plantDao.deleteFavorite(
-                        PlantEntity(
-                            id = plant.id,
-                            name = plant.name,
-                            origin = plant.origin,
-                            imageResource = plant.imageResource,
-                            isFavorite = plant.isFavorite
-                        )
-                    )
-                }
-            }
-
-            Toast.makeText(
-                requireContext(),
-                if (plant.isFavorite) "${plant.name} added to favorites!" else "${plant.name} removed from favorites!",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-
-        adapter.database = database // Sambungkan database ke adapter
-
-        binding.recyclerView.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        binding.recyclerView.adapter = adapter
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -194,4 +207,5 @@ class HomeFragment : Fragment() {
         slideHandler.removeCallbacks(slideRunnable)
     }
 }
+
 

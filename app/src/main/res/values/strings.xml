@@ -95,5 +95,7 @@
     <string name="no_tflite_interpreter_loaded">No TFLite interpreter loaded</string>
     <string name="error_during_prediction">Prediksi Error</string>
     <string name="download_success">Model berhasil di download</string>
+    <string name="plant_classifier_failed">Prediksi gagal</string>
+    <string name="model_download_success">Model berhasil di download</string>
 
 </resources>

@@ -3,6 +3,7 @@ package com.example.yuktanam.logic.data.api
 import com.example.yuktanam.logic.data.request.LoginRequest
 import com.example.yuktanam.logic.data.request.RegisterRequest
 import com.example.yuktanam.logic.data.response.AddPlantResponse
+import com.example.yuktanam.logic.data.response.DetectionResponse
 import com.example.yuktanam.logic.data.response.GetPlantResponse
 import com.example.yuktanam.logic.data.response.LoginResponse
 import com.example.yuktanam.logic.data.response.RegisterResponse
@@ -43,4 +44,10 @@ interface ApiService {
 
     @GET("api/v1/plants")
     suspend fun getPlants(): Response<GetPlantResponse>
+
+    @Multipart
+    @POST("api/v1/scan/plant")
+    suspend fun detect(
+        @Part gambar: MultipartBody.Part
+    ): DetectionResponse
 }

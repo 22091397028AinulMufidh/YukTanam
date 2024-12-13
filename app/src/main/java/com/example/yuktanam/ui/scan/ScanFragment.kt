@@ -13,7 +13,9 @@ import androidx.fragment.app.Fragment
 import com.example.yuktanam.R
 import com.example.yuktanam.databinding.FragmentScanBinding
 import com.example.yuktanam.ui.addplants.CameraActivity
-import org.json.JSONObject
+import com.example.yuktanam.ui.plants.CameraActivity
+import com.example.yuktanam.ui.plants.CameraActivity.Companion.CAMERAX_RESULT
+
 
 class ScanFragment : Fragment(R.layout.fragment_scan) {
 
@@ -110,3 +112,6 @@ class ScanFragment : Fragment(R.layout.fragment_scan) {
         """.trimIndent()
     }
 }
+
+
+

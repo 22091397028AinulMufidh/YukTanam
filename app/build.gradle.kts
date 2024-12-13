@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
+    id("kotlin-parcelize")
     alias(libs.plugins.google.gms.google.services)
 }
 
@@ -41,6 +42,7 @@ android {
     buildFeatures {
         viewBinding = true
         compose = true
+        mlModelBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -71,9 +73,15 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.material3)
+    implementation(libs.play.services.tflite.gpu)
+    implementation(libs.tensorflow.lite.support)
+    implementation(libs.tensorflow.lite.metadata)
+    implementation(libs.tensorflow.lite.gpu)
     testImplementation(libs.junit)
+    testImplementation(libs.androidx.ui.test.junit4.android)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.camera.core)
     implementation(libs.google.material.v190)
     implementation(libs.glide)
     implementation(libs.circleimageview)
@@ -93,6 +101,11 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.mockito.core)
+    androidTestImplementation(libs.mockito.android)
+    testImplementation(libs.kotlinx.coroutines.test)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     //noinspection KaptUsageInsteadOfKsp
@@ -116,5 +129,30 @@ dependencies {
 
     // Lottie Animastion
     implementation(libs.lottie.compose)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.ml.modeldownloader)
+    implementation(libs.firebase.storage)
+
+    // Retrofit dependency
+    implementation(libs.retrofit)
+    // Gson Converter for Retrofit
+    implementation(libs.converter.gson)
+    // Gson dependency
+    implementation(libs.gson)
+
+    // Glide
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+
+    implementation(libs.tensorflow.lite.metadata)
+    implementation(libs.tensorflow.lite)
+    implementation(libs.tensorflow.lite.task.vision)
+    implementation(libs.tensorflow.lite.support.v040)
+
+    implementation(libs.logging.interceptor)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.okhttp)
+
 
 }

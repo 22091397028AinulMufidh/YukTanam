@@ -84,4 +84,3 @@ class FavoriteFragment : Fragment() {
         _binding = null
     }
 }
-

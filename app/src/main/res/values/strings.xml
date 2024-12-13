@@ -25,6 +25,7 @@
     <string name="title_register">Isikan data terlebih dahulu dan pastikan sudah benar dan valid</string>
     <string name="name_hint">Masukan nama kamu</string>
     <string name="have_account">Sudah memiliki akun?</string>
+    <string name="confirm_password">Konfirmasi kata sandi</string>
 
     <!-- Bottom Navigation   -->
     <string name="title_home">Beranda</string>
@@ -87,7 +88,14 @@
     <string name="all_mission">Semua Misi</string>
 
     <!--  API KEY GEMINI AI  -->
-    <string name="api_key">AIzaSyCFxratx_6J2Tnn3LwoWFA-1_ct6wl7uJE"</string>
     <string name="title_activity_chatbot">ChatbotActivity</string>
+
+    <string name="firebaseml_model_download_failed">Gagal mendownload model, cek koneksi internet Anda.</string>
+    <string name="tflite_is_not_initialized_yet">TfLite is not initialized yet</string>
+    <string name="no_tflite_interpreter_loaded">No TFLite interpreter loaded</string>
+    <string name="error_during_prediction">Prediksi Error</string>
+    <string name="download_success">Model berhasil di download</string>
+    <string name="plant_classifier_failed">Prediksi gagal</string>
+    <string name="model_download_success">Model berhasil di download</string>
 
 </resources>

@@ -12,8 +12,8 @@
     <!-- IMAGE LOGO  -->
     <ImageView
         android:id="@+id/img_logo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:contentDescription="@string/logo"
         android:src="@drawable/logo"
         app:layout_constraintTop_toTopOf="parent"
@@ -44,7 +44,7 @@
         android:layout_height="55dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/card_login"
         android:padding="8dp"
         app:layout_constraintTop_toBottomOf="@+id/title_register"
@@ -125,7 +125,36 @@
             android:inputType="textPassword" />
     </LinearLayout>
 
-    <!-- Button Login -->
+    <!-- CONFIRM PASSWORD -->
+    <LinearLayout
+        android:id="@+id/confirm_password"
+        android:layout_width="350dp"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/card_login"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/form_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <!-- EditText Password -->
+        <com.example.yuktanam.ui.customview.CustomPassword
+            android:id="@+id/confirmPasswordEditText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="@string/confirm_password"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <!-- Button Register -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_register"
         android:layout_width="match_parent"
@@ -142,7 +171,7 @@
         app:cornerRadius="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/form_password" />
+        app:layout_constraintTop_toBottomOf="@id/confirm_password" />
 
     <!--  CONTAINER HAVE ACCOUNT  -->
     <LinearLayout

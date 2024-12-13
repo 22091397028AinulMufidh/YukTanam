@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.credentials.ClearCredentialStateRequest
 import androidx.credentials.CredentialManager
 import androidx.fragment.app.Fragment
@@ -37,7 +38,7 @@ class ProfileFragment : Fragment() {
 
         // Logout logic on click
         val logoutClickListener = View.OnClickListener {
-            signOut()
+            showLogoutConfirmationDialog()
         }
         binding.iconLogout.setOnClickListener(logoutClickListener)
         binding.titleLogout.setOnClickListener(logoutClickListener)
@@ -50,6 +51,24 @@ class ProfileFragment : Fragment() {
         _binding = null
     }
 
+    // Fungsi untuk menampilkan dialog konfirmasi logout
+    private fun showLogoutConfirmationDialog() {
+        AlertDialog.Builder(requireContext()).apply {
+            setTitle("Konfirmasi Keluar")
+            setMessage("Apakah Anda yakin ingin keluar?")
+            setPositiveButton("Ya") { dialog, _ ->
+                dialog.dismiss()
+                signOut()
+            }
+            setNegativeButton("Tidak") { dialog, _ ->
+                dialog.dismiss()
+            }
+            create()
+            show()
+        }
+    }
+
+    // Fungsi logout
     private fun signOut() {
         lifecycleScope.launch {
             try {
@@ -66,7 +85,6 @@ class ProfileFragment : Fragment() {
                 startActivity(Intent(requireActivity(), LoginActivity::class.java))
                 requireActivity().finish()
             } catch (e: Exception) {
-                // Tangani error jika ada
                 e.printStackTrace()
             }
         }

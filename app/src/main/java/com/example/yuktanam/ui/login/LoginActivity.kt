@@ -3,12 +3,14 @@ package com.example.yuktanam.ui.login
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.credentials.CredentialManager
 import androidx.credentials.CustomCredential
 import androidx.credentials.GetCredentialRequest
 import androidx.credentials.GetCredentialResponse
 import androidx.credentials.exceptions.GetCredentialException
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.yuktanam.MainActivity
 import com.example.yuktanam.R
@@ -29,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
+    private lateinit var viewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +59,45 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnGoogle.setOnClickListener {
             signIn()
+        }
+
+        // Inisialisasi ViewModel Login email & password
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+
+        // Tombol Login
+        binding.btnLogin.setOnClickListener {
+            val email = binding.emailEditText.text.toString().trim()
+            val password = binding.passwordEditText.text.toString().trim()
+
+            // Validasi input
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Email dan Password tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Panggil fungsi login dari ViewModel
+            viewModel.loginUser(email, password) { loginResponse ->
+                if (loginResponse != null) {
+                    // Login berhasil
+                    Toast.makeText(
+                        this,
+                        "Login berhasil! Selamat datang ${loginResponse.email}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                    // Navigasi ke halaman utama
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    // Login gagal
+                    Toast.makeText(
+                        this,
+                        "Login gagal. Periksa email dan password Anda.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
         }
 
     }

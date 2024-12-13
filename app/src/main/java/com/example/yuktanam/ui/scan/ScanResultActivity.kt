@@ -52,4 +52,4 @@ class ScanResultActivity : AppCompatActivity() {
         }
     }
 }
-}
+

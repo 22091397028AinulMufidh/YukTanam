@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -12,9 +11,7 @@ import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import com.example.yuktanam.R
 import com.example.yuktanam.databinding.FragmentScanBinding
-import com.example.yuktanam.ui.addplants.CameraActivity
 import com.example.yuktanam.ui.plants.CameraActivity
-import com.example.yuktanam.ui.plants.CameraActivity.Companion.CAMERAX_RESULT
 
 
 class ScanFragment : Fragment(R.layout.fragment_scan) {
@@ -75,23 +72,42 @@ class ScanFragment : Fragment(R.layout.fragment_scan) {
         cameraLauncher.launch(intent)
     }
 
-    private fun processImage(uri: Uri) {
-        val dummyResult = getDummyScanResult()
+//    private fun processImage(uri: Uri) {
+//        val dummyResult = getDummyScanResult()
+//
+//        val intent = Intent(requireContext(), ScanResultActivity::class.java).apply {
+//            putExtra("capturedImageUri", uri.toString())
+//            putExtra("scan_result", dummyResult)
+//        }
+//        startActivity(intent)
+//    }
+//
+//    private fun scanImage() {
+//        if (capturedImageUri != null) {
+//            processImage(capturedImageUri!!)
+//        } else {
+//            Toast.makeText(requireContext(), "Harap unggah atau ambil gambar terlebih dahulu", Toast.LENGTH_SHORT).show()
+//        }
+//    }
 
-        val intent = Intent(requireContext(), ScanResultActivity::class.java).apply {
-            putExtra("capturedImageUri", uri.toString())
-            putExtra("scan_result", dummyResult)
-        }
-        startActivity(intent)
+    private fun processImage(uri: Uri): String {
+        return getDummyScanResult()
     }
 
     private fun scanImage() {
         if (capturedImageUri != null) {
-            processImage(capturedImageUri!!)
+            val dummyResult = processImage(capturedImageUri!!)
+
+            val intent = Intent(requireContext(), ScanResultActivity::class.java).apply {
+                putExtra("capturedImageUri", capturedImageUri!!.toString())
+                putExtra("scan_result", dummyResult)
+            }
+            startActivity(intent)
         } else {
             Toast.makeText(requireContext(), "Harap unggah atau ambil gambar terlebih dahulu", Toast.LENGTH_SHORT).show()
         }
     }
+
 
     private fun getDummyScanResult(): String {
         return """

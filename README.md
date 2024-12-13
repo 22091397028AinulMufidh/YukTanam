@@ -1,8 +1,16 @@
 # bangkit-capstone-project
 The documentation of YukTanam' application in Bangkit Capstone Project 2022
 
+<p align="center">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/logo/logo.png" width="400">
+</p>
+
 # About
 Cultivating Sustainable Habits, One Step at a Time
+
+**Backgrounder:**
+
+Urbanization and busy lifestyles have led to a decline in eco-friendly habits, especially gardening, impacting both individual well-being and environmental health. Studies show that gardening can improve mental health, reduce stress, and support biodiversity, yet people struggle with maintaining plant care due to time constraints, lack of knowledge, and unsuitable plant choices. This project proposes YukTanam, a mobile gardening app, to help users build sustainable gardening habits by providing personalized plant recommendations, guided plant care with reminders, and a gamified system that tracks plant growth and health. Leveraging machine learning, the app identifies optimal plant options based on environmental data and user lifestyles while offering AI-based feedback for plant health through image recognition. We choose to tackle this problem as it aligns with global efforts toward environmental sustainability and individual well-being.
 
 # The Team
 
@@ -27,22 +35,8 @@ Cultivating Sustainable Habits, One Step at a Time
 # Service Architecture
 ![Service_Architecture](https://user-images.githubusercontent.com/86970816/172196957-b66a2424-bf1a-4c90-aaf2-842122eba1fa.png)
 
-# License
-Distributed under the MIT License. See `LICENSE` for more information.
-
-<p align="right"> Keep the Bangkit Spirit and Stay Safe! <br> C22-PS007 Teams </p>
-
-**Backgrounder:**
-
-Autism is a syndrome of brain development that attacks the sufferer. The person that has autism syndrome usually has difficulty communicating and interacting with other people. This type of disorder has been present since childhood. Most parents don’t know that their children have autism symptoms. Most parents also have no knowledge about how to deal with autism syndrome for their children. The question is how can parents detect whether their child has autism or not? And how do they deal with it? With this application, the parents that have a child can detect whether their child has autism symptoms or not. By knowing earlier, the child who has autism syndrome can be treated earlier so that the changes to recovery are greater. With this application we also hope to provide nearby therapy place from user location. also with this application as the first check in predicting autism before doing a more detailed check by a doctor. Our team hopes the proposed application will be a solution for parents who have children with autism syndrome.
 
 ## Screenshots
-
-<p align="center">
-  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/logo/logo.png" width="200">
-  <img src="login.jpeg" width="200">
-  <img src="/register.jpeg" width="200">
-</p>
 
 <p align="center">
   <img src="main.png" width="210">
@@ -84,4 +78,7 @@ Wait for Gradle Build to Finish and finally press the `Run > Run ‘app’`. Now
 #### 1. download file APK in https://drive.google.com/file/d/13v1orGnO2W3ND_NGA3awuj4rSJ5-eB8A/view?usp=sharing 
 ### 2. install that file in your mobile phone
 
-## Thank You :)
+# License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<p align="right"> Keep the Bangkit Spirit and Stay Safe! <br> C242-PS391 YukTanam Teams </p>

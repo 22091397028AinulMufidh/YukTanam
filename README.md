@@ -88,7 +88,7 @@ Wait for Gradle Build to Finish and finally press the `Run > Run ‘app’`. Now
 
 ### the orther way
 
-#### 1. download file APK in https://drive.google.com/file/d/13v1orGnO2W3ND_NGA3awuj4rSJ5-eB8A/view?usp=sharing 
+#### 1. download file APK in https://drive.google.com/file/d/1wax6nJ70sKl9Zt607o4CZX-viUfFxjwg/view?usp=sharing
 ### 2. install that file in your mobile phone
 
 # License

@@ -36,9 +36,8 @@ Urbanization and busy lifestyles have led to a decline in eco-friendly habits, e
 Documentation API : https://documenter.getpostman.com/view/39394190/2sAYBbf9xB
 
 # Service Architecture
-[Colud_Architecture](https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/cloud%20architechture.jpeg)
 <p align="center">
-  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/cloud%20architechture.jpeg" width="300">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/cloud%20architechture.jpeg" width="500">
 </p>
 
 

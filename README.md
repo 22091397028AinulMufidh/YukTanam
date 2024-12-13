@@ -18,7 +18,7 @@ Urbanization and busy lifestyles have led to a decline in eco-friendly habits, e
 |   :-------------------------:  |  :--------:  | :----------------: | :----------------------------------------: | 
 |        Fransco Gomex           | M004B4KY1546 |  Machine Learning  |          Machine Learning Engineer         |          
 |  Maulana Yusuf Ikhsan Robbani  | M004B4KY2440 |  Machine Learning  |          Machine Learning Engineer         |   
-|  Ridho Aditya Rosman Eka Putra | M309B4KY3820 |  Machine Learning  |          Machine Learning Enginee          |             
+|  Ridho Aditya Rosman Eka Putra | M309B4KY3820 |  Machine Learning  |          Machine Learning Engineer         |             
 |    Amanda Georgina Singgih     | C467B4KX0453 |   Cloud Computing  |      Project Manager, DevOps Engineer      |    
 |   Fahm Ara Alifia Santoso      | C467B4KX1345 |   Cloud Computing  |               DevOps Engineer              |           
 |          Ainul Mufidh          | A284B4KY0254 | Mobile Development |    Android Mobile Developer , Designer     |
@@ -26,27 +26,41 @@ Urbanization and busy lifestyles have led to a decline in eco-friendly habits, e
 
 # Repositories
 
-|   Learning Paths   |                                Link                                |
-| :----------------: | :----------------------------------------------------------------: |
-| Mobile Development | [Github](https://github.com/travens-id/bangkit-mobile-development) |
-|  Machine Learning  |  [Github](https://github.com/travens-id/bangkit-machine-learning)  |
-|   Cloud Computing  |   [Github](https://github.com/travens-id/bangkit-destination-API)  |
+|   Learning Paths   |                                      Link                                          |
+| :----------------: | :--------------------------------------------------------------------------------: |
+| Mobile Development | [Github](https://github.com/22091397028AinulMufidh/YukTanam)                       |
+|  Machine Learning  | [Github](https://github.com/Idoo0/YukTanam-ml-api)                                 |
+|   Cloud Computing  | [Github](https://github.com/22091397028AinulMufidh/YukTanam/tree/yuktanam-backend) |
+
+# Repositories
+Documentation API : https://documenter.getpostman.com/view/39394190/2sAYBbf9xB
 
 # Service Architecture
-![Service_Architecture](https://user-images.githubusercontent.com/86970816/172196957-b66a2424-bf1a-4c90-aaf2-842122eba1fa.png)
+![Colud_Architecture]https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/cloud%20architechture.jpeg)
 
 
 ## Screenshots
 
 <p align="center">
   <img src="main.png" width="210">
-  <img src="https://github.com/rafiechautie/Autism-detector-for-children/blob/main/consultation2.png" width="210">
-  <img src="https://github.com/rafiechautie/Autism-detector-for-children/blob/main/Halaman%20Detecion.png" width="210">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/register.jpeg" width="210">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/login.jpeg" width="210">
 </p>
 
 <p align="center">
-  <img src="https://github.com/rafiechautie/Autism-detector-for-children/blob/main/map.png" width="210">
-  <img src="https://github.com/rafiechautie/Autism-detector-for-children/blob/main/consultation.png" width="210">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/home.jpeg" width="210">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/challenge.jpeg" width="210">
+</p>
+
+<p align="center">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/detection.jpeg" width="210">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/result.jpeg" width="210">
+</p>
+
+<p align="center">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/chatbot.jpeg" width="210">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/favorit.jpeg" width="210">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/profile.jpeg" width="210">
 </p>
 
 

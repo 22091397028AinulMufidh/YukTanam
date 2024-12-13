@@ -1,8 +1,8 @@
-# bangkit-capstone-project
+# Bangkit Batch 2 2024 - Capstone Project
 The documentation of YukTanam' application in Bangkit Capstone Project 2022
 
 <p align="center">
-  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/logo/logo.png" width="400">
+  <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/logo/logo.png" width="300">
 </p>
 
 # About
@@ -32,17 +32,16 @@ Urbanization and busy lifestyles have led to a decline in eco-friendly habits, e
 |  Machine Learning  | [Github](https://github.com/Idoo0/YukTanam-ml-api)                                 |
 |   Cloud Computing  | [Github](https://github.com/22091397028AinulMufidh/YukTanam/tree/yuktanam-backend) |
 
-# Repositories
+# Rest API
 Documentation API : https://documenter.getpostman.com/view/39394190/2sAYBbf9xB
 
 # Service Architecture
-![Colud_Architecture]https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/cloud%20architechture.jpeg)
+[Colud_Architecture](https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/cloud%20architechture.jpeg)
 
 
 ## Screenshots
 
 <p align="center">
-  <img src="main.png" width="210">
   <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/register.jpeg" width="210">
   <img src="https://github.com/22091397028AinulMufidh/YukTanam/blob/main/app/src/main/assets/images/login.jpeg" width="210">
 </p>
